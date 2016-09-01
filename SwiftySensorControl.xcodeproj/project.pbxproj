@@ -1,0 +1,393 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CC66435A1D78552F00212EBA /* SwiftySensorControl.h in Headers */ = {isa = PBXBuildFile; fileRef = CC6643591D78552F00212EBA /* SwiftySensorControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CC6643611D78552F00212EBA /* SwiftySensorControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC6643561D78552F00212EBA /* SwiftySensorControl.framework */; };
+		CC6643661D78552F00212EBA /* SwiftySensorControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6643651D78552F00212EBA /* SwiftySensorControlTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CC6643621D78552F00212EBA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CC66434D1D78552F00212EBA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CC6643551D78552F00212EBA;
+			remoteInfo = SwiftySensorControl;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CC6643561D78552F00212EBA /* SwiftySensorControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftySensorControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC6643591D78552F00212EBA /* SwiftySensorControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftySensorControl.h; sourceTree = "<group>"; };
+		CC66435B1D78552F00212EBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC6643601D78552F00212EBA /* SwiftySensorControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftySensorControlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC6643651D78552F00212EBA /* SwiftySensorControlTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftySensorControlTests.swift; sourceTree = "<group>"; };
+		CC6643671D78552F00212EBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CC6643521D78552F00212EBA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC66435D1D78552F00212EBA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC6643611D78552F00212EBA /* SwiftySensorControl.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CC66434C1D78552F00212EBA = {
+			isa = PBXGroup;
+			children = (
+				CC6643581D78552F00212EBA /* SwiftySensorControl */,
+				CC6643641D78552F00212EBA /* SwiftySensorControlTests */,
+				CC6643571D78552F00212EBA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CC6643571D78552F00212EBA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CC6643561D78552F00212EBA /* SwiftySensorControl.framework */,
+				CC6643601D78552F00212EBA /* SwiftySensorControlTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CC6643581D78552F00212EBA /* SwiftySensorControl */ = {
+			isa = PBXGroup;
+			children = (
+				CC6643591D78552F00212EBA /* SwiftySensorControl.h */,
+				CC66435B1D78552F00212EBA /* Info.plist */,
+			);
+			path = SwiftySensorControl;
+			sourceTree = "<group>";
+		};
+		CC6643641D78552F00212EBA /* SwiftySensorControlTests */ = {
+			isa = PBXGroup;
+			children = (
+				CC6643651D78552F00212EBA /* SwiftySensorControlTests.swift */,
+				CC6643671D78552F00212EBA /* Info.plist */,
+			);
+			path = SwiftySensorControlTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		CC6643531D78552F00212EBA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC66435A1D78552F00212EBA /* SwiftySensorControl.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		CC6643551D78552F00212EBA /* SwiftySensorControl */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CC66436A1D78552F00212EBA /* Build configuration list for PBXNativeTarget "SwiftySensorControl" */;
+			buildPhases = (
+				CC6643511D78552F00212EBA /* Sources */,
+				CC6643521D78552F00212EBA /* Frameworks */,
+				CC6643531D78552F00212EBA /* Headers */,
+				CC6643541D78552F00212EBA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftySensorControl;
+			productName = SwiftySensorControl;
+			productReference = CC6643561D78552F00212EBA /* SwiftySensorControl.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CC66435F1D78552F00212EBA /* SwiftySensorControlTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CC66436D1D78552F00212EBA /* Build configuration list for PBXNativeTarget "SwiftySensorControlTests" */;
+			buildPhases = (
+				CC66435C1D78552F00212EBA /* Sources */,
+				CC66435D1D78552F00212EBA /* Frameworks */,
+				CC66435E1D78552F00212EBA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CC6643631D78552F00212EBA /* PBXTargetDependency */,
+			);
+			name = SwiftySensorControlTests;
+			productName = SwiftySensorControlTests;
+			productReference = CC6643601D78552F00212EBA /* SwiftySensorControlTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CC66434D1D78552F00212EBA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = jeffgukang;
+				TargetAttributes = {
+					CC6643551D78552F00212EBA = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					CC66435F1D78552F00212EBA = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = CC6643501D78552F00212EBA /* Build configuration list for PBXProject "SwiftySensorControl" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CC66434C1D78552F00212EBA;
+			productRefGroup = CC6643571D78552F00212EBA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CC6643551D78552F00212EBA /* SwiftySensorControl */,
+				CC66435F1D78552F00212EBA /* SwiftySensorControlTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CC6643541D78552F00212EBA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC66435E1D78552F00212EBA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CC6643511D78552F00212EBA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC66435C1D78552F00212EBA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC6643661D78552F00212EBA /* SwiftySensorControlTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CC6643631D78552F00212EBA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CC6643551D78552F00212EBA /* SwiftySensorControl */;
+			targetProxy = CC6643621D78552F00212EBA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		CC6643681D78552F00212EBA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CC6643691D78552F00212EBA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CC66436B1D78552F00212EBA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SwiftySensorControl/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jeffgukang.SwiftySensorControl;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		CC66436C1D78552F00212EBA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SwiftySensorControl/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jeffgukang.SwiftySensorControl;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		CC66436E1D78552F00212EBA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SwiftySensorControlTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jeffgukang.SwiftySensorControlTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CC66436F1D78552F00212EBA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SwiftySensorControlTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jeffgukang.SwiftySensorControlTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CC6643501D78552F00212EBA /* Build configuration list for PBXProject "SwiftySensorControl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC6643681D78552F00212EBA /* Debug */,
+				CC6643691D78552F00212EBA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CC66436A1D78552F00212EBA /* Build configuration list for PBXNativeTarget "SwiftySensorControl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC66436B1D78552F00212EBA /* Debug */,
+				CC66436C1D78552F00212EBA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CC66436D1D78552F00212EBA /* Build configuration list for PBXNativeTarget "SwiftySensorControlTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC66436E1D78552F00212EBA /* Debug */,
+				CC66436F1D78552F00212EBA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CC66434D1D78552F00212EBA /* Project object */;
+}
