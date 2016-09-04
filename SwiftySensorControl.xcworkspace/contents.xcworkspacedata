@@ -4,4 +4,10 @@
    <FileRef
       location = "container:SwiftySensorControl.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Example/Example.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Playground.playground">
+   </FileRef>
 </Workspace>
