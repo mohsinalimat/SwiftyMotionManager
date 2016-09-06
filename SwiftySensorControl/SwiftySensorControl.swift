@@ -51,10 +51,7 @@ public class SwiftySensorControl: CMMotionManager {
         }
     }
     
-    static public func accelerometerTurnOn() -> String {
-        
-        return "Accel On"
-    }
+    // TODO: Normalize x, y, z
 }
 
 public protocol SwiftySensorControlDelegate: class {
