@@ -17,7 +17,7 @@ class AccelViewController: UIViewController, SwiftySensorControlDelegate {
     @IBOutlet weak var yLabel: UILabel!
     @IBOutlet weak var zLabel: UILabel!
     
-    let sensorControl = SwiftySensorControl()
+    let sensorControl = SwiftySensorControl.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()

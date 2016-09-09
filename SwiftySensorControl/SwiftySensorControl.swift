@@ -10,10 +10,10 @@ import Foundation
 import CoreMotion
 
 public class SwiftySensorControl: CMMotionManager {
-    static let sharedInstance = SwiftySensorControl()
+    static public let sharedInstance = SwiftySensorControl()
     weak public var delegate: SwiftySensorControlDelegate?
     
-    override public init() {
+    override private init() {
         super.init()
         print(self.accelerometerAvailable)
         print(self.gyroAvailable)
@@ -88,8 +88,13 @@ public class SwiftySensorControl: CMMotionManager {
 }
 
 public protocol SwiftySensorControlDelegate: class {
-    func accelerometerUpdated(accellerometerData: CMAccelerometerData?)
-    func gyroUpdated(gyroData: CMGyroData?)
+}
+
+extension SwiftySensorControlDelegate {
+    /** Optional function.
+    */
+    func accelerometerUpdated(accellerometerData: CMAccelerometerData?) {}
+    func gyroUpdated(gyroData: CMGyroData?) {}
 }
 
 extension CMAcceleration {
