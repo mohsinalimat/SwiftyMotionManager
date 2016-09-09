@@ -33,7 +33,7 @@ public class SwiftySensorControl: CMMotionManager {
         }
     }
     
-    /** Accelerometer data transfer to delegate.
+    /** Accelerometer data transfer to the delegate method.
     */
     public func startAccelelometerUpdatesToMainQueue() {
         if delegate?.accelerometerUpdated != nil {
@@ -68,7 +68,7 @@ public class SwiftySensorControl: CMMotionManager {
         }
     }
     
-    /** Gyro data transfer to delegate.
+    /** Gyro data transfer to the delegate method.
      */
     public func startGyroUpdatesToMainQueue() {
         if delegate?.gyroUpdated != nil {
@@ -91,14 +91,13 @@ public class SwiftySensorControl: CMMotionManager {
         }
     }
 
-
+    // TODO: Magnetometer
+    
+    // TODO: Device motion
     
 }
 
-@objc public protocol SwiftySensorControlDelegate: class {
-    optional func accelerometerUpdated(accellerometerData: CMAccelerometerData?)
-    optional func gyroUpdated(gyroData: CMGyroData?)
-}
+// MARK: Extensions
 
 extension CMAcceleration {
     /** Only for average value given device regardless of direction.
@@ -120,6 +119,7 @@ extension CMRotationRate {
     }
 }
 
+// MARK: Additional Functions
 func ErrorLog(message: String = "", _ path: String = #file, _ line: Int = #line, _ function: String = #function) {
 //    let file = path.componentsSeparatedByString("/").last!.componentsSeparatedByString(".").first!
     NSLog("\(path).\(line).\(function): \(message)")
