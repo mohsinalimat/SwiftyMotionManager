@@ -16,6 +16,7 @@
 		CCAD43D41D7C3E1A00EDAA22 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCAD43D31D7C3E1A00EDAA22 /* CoreMotion.framework */; };
 		CCAD43DA1D7C420900EDAA22 /* SwiftySensorControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC6643B11D785D8B00212EBA /* SwiftySensorControl.framework */; };
 		CCAD43DB1D7C420900EDAA22 /* SwiftySensorControl.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CC6643B11D785D8B00212EBA /* SwiftySensorControl.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CCD8225D1D82E1E300ADC0A3 /* AccelerometerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD8225C1D82E1E300ADC0A3 /* AccelerometerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		CC6643941D785BCF00212EBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC6643AA1D785D8B00212EBA /* SwiftySensorControl.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftySensorControl.xcodeproj; path = ../SwiftySensorControl.xcodeproj; sourceTree = "<group>"; };
 		CCAD43D31D7C3E1A00EDAA22 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		CCD8225C1D82E1E300ADC0A3 /* AccelerometerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccelerometerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				CC6643921D785BCF00212EBA /* ExampleTests.swift */,
+				CCD8225C1D82E1E300ADC0A3 /* AccelerometerTests.swift */,
 				CC6643941D785BCF00212EBA /* Info.plist */,
 			);
 			path = ExampleTests;
@@ -285,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC6643931D785BCF00212EBA /* ExampleTests.swift in Sources */,
+				CCD8225D1D82E1E300ADC0A3 /* AccelerometerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

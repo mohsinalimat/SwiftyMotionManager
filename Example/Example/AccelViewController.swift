@@ -32,7 +32,6 @@ class AccelViewController: UIViewController, SwiftySensorControlDelegate {
     }
     
     func accelerometerUpdated(accellerometerData: CMAccelerometerData?) {
-//        accellerometerData?.timestamp.description
         xLabel.text = accellerometerData?.acceleration.x.description
         yLabel.text = accellerometerData?.acceleration.y.description
         zLabel.text = accellerometerData?.acceleration.z.description

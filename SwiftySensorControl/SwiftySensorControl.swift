@@ -13,7 +13,7 @@ public class SwiftySensorControl: CMMotionManager {
     static public let sharedInstance = SwiftySensorControl()
     weak public var delegate: SwiftySensorControlDelegate?
     
-    override private init() {
+    override public init() {
         super.init()
         print(self.accelerometerAvailable)
         print(self.gyroAvailable)
@@ -36,8 +36,12 @@ public class SwiftySensorControl: CMMotionManager {
     /** Accelerometer data transfer to delegate.
     */
     public func startAccelelometerUpdatesToMainQueue() {
-        super.startAccelerometerUpdatesToQueue(NSOperationQueue.mainQueue()) { (data, error) in
-            self.delegate?.accelerometerUpdated(data)
+        if delegate?.accelerometerUpdated != nil {
+            super.startAccelerometerUpdatesToQueue(NSOperationQueue.mainQueue()) { (data, error) in
+                self.delegate?.accelerometerUpdated!(data)
+            }
+        } else {
+            ErrorLog("Cannot find accelerometerUpdated() required by protocol.")
         }
     }
 
@@ -67,8 +71,12 @@ public class SwiftySensorControl: CMMotionManager {
     /** Gyro data transfer to delegate.
      */
     public func startGyroUpdatesToMainQueue() {
-        super.startGyroUpdatesToQueue(NSOperationQueue.mainQueue()) { (data, error) in
-            self.delegate?.gyroUpdated(data)
+        if delegate?.gyroUpdated != nil {
+            super.startGyroUpdatesToQueue(NSOperationQueue.mainQueue()) { (data, error) in
+                self.delegate?.gyroUpdated!(data)
+            }
+        } else {
+            ErrorLog("Cannot find gyroUpdated() required by protocol.")
         }
     }
     
@@ -87,14 +95,9 @@ public class SwiftySensorControl: CMMotionManager {
     
 }
 
-public protocol SwiftySensorControlDelegate: class {
-}
-
-extension SwiftySensorControlDelegate {
-    /** Optional function.
-    */
-    func accelerometerUpdated(accellerometerData: CMAccelerometerData?) {}
-    func gyroUpdated(gyroData: CMGyroData?) {}
+@objc public protocol SwiftySensorControlDelegate: class {
+    optional func accelerometerUpdated(accellerometerData: CMAccelerometerData?)
+    optional func gyroUpdated(gyroData: CMGyroData?)
 }
 
 extension CMAcceleration {
@@ -115,4 +118,9 @@ extension CMRotationRate {
     var integratedData: Double {
         return sqrt(pow(x, 2) + pow(y, 2) + pow(z, 2))
     }
+}
+
+func ErrorLog(message: String = "", _ path: String = #file, _ line: Int = #line, _ function: String = #function) {
+//    let file = path.componentsSeparatedByString("/").last!.componentsSeparatedByString(".").first!
+    NSLog("\(path).\(line).\(function): \(message)")
 }
