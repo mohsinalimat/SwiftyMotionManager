@@ -1,8 +1,8 @@
 //
-//  ViewController.swift
+//  GyroViewController.swift
 //  Example
 //
-//  Created by Jeff Kang on 9/1/16.
+//  Created by Jeff Kang on 9/9/16.
 //  Copyright © 2016 jeffgukang. All rights reserved.
 //
 
@@ -10,27 +10,27 @@ import UIKit
 import SwiftySensorControl
 import CoreMotion
 
-class AccelViewController: UIViewController, SwiftySensorControlDelegate {
+class GyroViewController: UIViewController, SwiftySensorControlDelegate {
     
     @IBOutlet weak var xLabel: UILabel!
     @IBOutlet weak var yLabel: UILabel!
     @IBOutlet weak var zLabel: UILabel!
-    
+
     let sensorControl = SwiftySensorControl.sharedInstance
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view, typically from a nib.
+
+        // Do any additional setup after loading the view.
         xLabel.adjustsFontSizeToFitWidth = true
         yLabel.adjustsFontSizeToFitWidth = true
         zLabel.adjustsFontSizeToFitWidth = true
-
+        
         sensorControl.delegate = self
-        sensorControl.startAccelelometerUpdatesToMainQueue { (accellerometerData, error) in
-            self.xLabel.text = accellerometerData?.acceleration.x.description
-            self.yLabel.text = accellerometerData?.acceleration.y.description
-            self.zLabel.text = accellerometerData?.acceleration.z.description
+        sensorControl.startGyroUpdatesToMainQueue { (gyroData, error) in
+            self.xLabel.text = gyroData?.rotationRate.x.description
+            self.yLabel.text = gyroData?.rotationRate.y.description
+            self.zLabel.text = gyroData?.rotationRate.z.description
         }
     }
 
