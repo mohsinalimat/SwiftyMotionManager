@@ -97,6 +97,13 @@ public class SwiftySensorControl: CMMotionManager {
     
 }
 
+// MARK: Protocol
+
+@objc public protocol SwiftySensorControlDelegate: class {
+    optional func accelerometerUpdated(accellerometerData: CMAccelerometerData?)
+    optional func gyroUpdated(gyroData: CMGyroData?)
+}
+
 // MARK: Extensions
 
 extension CMAcceleration {

@@ -27,15 +27,18 @@ class AccelViewController: UIViewController, SwiftySensorControlDelegate {
         zLabel.adjustsFontSizeToFitWidth = true
 
         sensorControl.delegate = self
-        sensorControl.startAccelelometerUpdatesToMainQueue { (accellerometerData, error) in
-            self.xLabel.text = accellerometerData?.acceleration.x.description
-            self.yLabel.text = accellerometerData?.acceleration.y.description
-            self.zLabel.text = accellerometerData?.acceleration.z.description
-        }
+        sensorControl.startAccelelometerUpdatesToMainQueue()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: SwiftySensorControlDelegate
+    func accelerometerUpdated(accellerometerData: CMAccelerometerData?) {
+        xLabel.text = accellerometerData?.acceleration.x.description
+        yLabel.text = accellerometerData?.acceleration.y.description
+        zLabel.text = accellerometerData?.acceleration.z.description
     }
 }
