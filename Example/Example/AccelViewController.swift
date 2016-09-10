@@ -10,11 +10,12 @@ import UIKit
 import SwiftySensorControl
 import CoreMotion
 
-class AccelViewController: UIViewController, SwiftySensorControlDelegate {
+class AccelViewController: UIViewController {
     
     @IBOutlet weak var xLabel: UILabel!
     @IBOutlet weak var yLabel: UILabel!
     @IBOutlet weak var zLabel: UILabel!
+    @IBOutlet weak var aveLabel: UILabel!
     
     let sensorControl = SwiftySensorControl.sharedInstance
     
@@ -25,12 +26,13 @@ class AccelViewController: UIViewController, SwiftySensorControlDelegate {
         xLabel.adjustsFontSizeToFitWidth = true
         yLabel.adjustsFontSizeToFitWidth = true
         zLabel.adjustsFontSizeToFitWidth = true
-
-        sensorControl.delegate = self
+        aveLabel.adjustsFontSizeToFitWidth = true
+        
         sensorControl.startAccelelometerUpdatesToMainQueue { (accellerometerData, error) in
             self.xLabel.text = accellerometerData?.acceleration.x.description
             self.yLabel.text = accellerometerData?.acceleration.y.description
             self.zLabel.text = accellerometerData?.acceleration.z.description
+            self.aveLabel.text = accellerometerData?.acceleration.integratedData.description
         }
     }
 
