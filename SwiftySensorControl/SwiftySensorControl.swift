@@ -15,10 +15,6 @@ public class SwiftySensorControl: CMMotionManager {
     
     override public init() {
         super.init()
-        print(self.accelerometerAvailable)
-        print(self.gyroAvailable)
-        print(self.magnetometerAvailable)
-        print(self.deviceMotionAvailable)
     }
     
     
