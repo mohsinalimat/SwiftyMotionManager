@@ -11,7 +11,6 @@ import CoreMotion
 
 public class SwiftySensorControl: CMMotionManager {
     static public let sharedInstance = SwiftySensorControl()
-    weak public var delegate: SwiftySensorControlDelegate?
     
     override public init() {
         super.init()
@@ -29,17 +28,6 @@ public class SwiftySensorControl: CMMotionManager {
         }
     }
     
-    /** Accelerometer data transfer to the delegate method.
-    */
-    public func startAccelelometerUpdatesToMainQueue() {
-        if delegate?.accelerometerUpdated != nil {
-            super.startAccelerometerUpdatesToQueue(NSOperationQueue.mainQueue()) { (data, error) in
-                self.delegate?.accelerometerUpdated!(data)
-            }
-        } else {
-            ErrorLog("Cannot find accelerometerUpdated() required by protocol.")
-        }
-    }
 
     /** Accelerometer data will treat by handler whenever it updates.
      */
@@ -62,19 +50,7 @@ public class SwiftySensorControl: CMMotionManager {
             super.startGyroUpdates()
             return true
         }
-    }
-    
-    /** Gyro data transfer to the delegate method.
-     */
-    public func startGyroUpdatesToMainQueue() {
-        if delegate?.gyroUpdated != nil {
-            super.startGyroUpdatesToQueue(NSOperationQueue.mainQueue()) { (data, error) in
-                self.delegate?.gyroUpdated!(data)
-            }
-        } else {
-            ErrorLog("Cannot find gyroUpdated() required by protocol.")
-        }
-    }
+    }    
     
     /** Gyro data will treat by handler whenever it updates.
      */
@@ -96,22 +72,26 @@ public class SwiftySensorControl: CMMotionManager {
 // MARK: Extensions
 
 extension CMAcceleration {
-    /** Only for average value given device regardless of direction.
+    /** Only for absolute average value given device regardless of direction.
      *  It can be used to find how much power is given to device.
      *  - return: sqrt(pow(x, 2) + pow(y, 2) + pow(z, 2))
      */
-    var integratedData: Double {
-        return sqrt(pow(x, 2) + pow(y, 2) + pow(z, 2))
+    public var integratedData: Double {
+        get {
+            return sqrt(pow(x, 2) + pow(y, 2) + pow(z, 2))
+        }
     }
 }
 
 extension CMRotationRate {
-    /** Only for average value given device regardless of direction.
+    /** Only for absolute average value given device regardless of direction.
      *  It can be used to find how much device rotated.
      *  - return: sqrt(pow(x, 2) + pow(y, 2) + pow(z, 2))
      */
-    var integratedData: Double {
-        return sqrt(pow(x, 2) + pow(y, 2) + pow(z, 2))
+    public var integratedData: Double {
+        get {
+            return sqrt(pow(x, 2) + pow(y, 2) + pow(z, 2))
+        }
     }
 }
 
