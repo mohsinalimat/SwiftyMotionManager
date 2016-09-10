@@ -27,11 +27,14 @@ public class SwiftySensorControl: CMMotionManager {
             return true
         }
     }
-    
 
-    /** Accelerometer data will treat by handler whenever it updates.
+    /**
+     Accelerometer data will treat by handler whenever it updates.
+     - parameter handler: A block that is invoked with each update to handle new accelerometer data. The block must conform to the CMAccelerometerHandler type.
+     
+     - returns: Return false when accelerometer is not available.
      */
-    public func startAccelelometerUpdatesToMainQueue(handler: CMAccelerometerHandler) -> Bool {
+    public func startAccelelometerUpdatesToMainQueue(withHandler handler: CMAccelerometerHandler) -> Bool {
         if !self.accelerometerAvailable {
             return false
         } else {
@@ -40,6 +43,21 @@ public class SwiftySensorControl: CMMotionManager {
         }
     }
     
+    /** 
+     Accelerometer data will treat by handler whenever it updates by interval.
+     - parameter handler: A block that is invoked with each update to handle new accelerometer data. The block must conform to the CMAccelerometerHandler type.
+     
+     - returns: Return false when accelerometer is not available.
+     */
+    public func startAccelelometerUpdatesToMainQueue(byInterval interval:NSTimeInterval, withHandler handler: CMAccelerometerHandler) -> Bool {
+        if !self.accelerometerAvailable {
+            return false
+        } else {
+            super.accelerometerUpdateInterval = interval
+            super.startAccelerometerUpdatesToQueue(NSOperationQueue.mainQueue(), withHandler: handler)
+            return true
+        }
+    }
     
     // MARK: Gyroscope
     
@@ -52,12 +70,23 @@ public class SwiftySensorControl: CMMotionManager {
         }
     }    
     
-    /** Gyro data will treat by handler whenever it updates.
+    /** 
+     Gyro data will treat by handler whenever it updates.
      */
-    public func startGyroUpdatesToMainQueue(handler: CMGyroHandler) -> Bool {
+    public func startGyroUpdatesToMainQueue(withHandler handler: CMGyroHandler) -> Bool {
         if !self.gyroAvailable {
             return false
         } else {
+            super.startGyroUpdatesToQueue(NSOperationQueue.mainQueue(), withHandler: handler)
+            return true
+        }
+    }
+    
+    public func startGyroUpdatesToMainQueue(byInterval interval: NSTimeInterval, withHandler handler: CMGyroHandler) -> Bool {
+        if !self.gyroAvailable {
+            return false
+        } else {
+            super.gyroUpdateInterval = interval
             super.startGyroUpdatesToQueue(NSOperationQueue.mainQueue(), withHandler: handler)
             return true
         }
@@ -74,7 +103,7 @@ public class SwiftySensorControl: CMMotionManager {
 extension CMAcceleration {
     /** Only for absolute average value given device regardless of direction.
      *  It can be used to find how much power is given to device.
-     *  - return: sqrt(pow(x, 2) + pow(y, 2) + pow(z, 2))
+     *  -returns: sqrt(pow(x, 2) + pow(y, 2) + pow(z, 2))
      */
     public var integratedData: Double {
         get {
