@@ -19,6 +19,9 @@ public class SwiftySensorControl: CMMotionManager {
     
     // MARK: Accelerometer
     
+    /**
+     You can get the latest accelerometer data through the accelerometerData property. You must call stopAccelerometerUpdates when you no longer want your app to process accelerometer updates.
+     */
     public func startAccelerometerUpdatesIfAvailable() -> Bool{
         if !self.accelerometerAvailable {
             return false
@@ -61,6 +64,9 @@ public class SwiftySensorControl: CMMotionManager {
     
     // MARK: Gyroscope
     
+    /**
+     You can get the latest gyro data through the gyroData property. You must call stopGyroUpdates when you no longer want your app to process gyro updates.
+    */
     public func startGyroUpdatesIfAvailable() -> Bool {
         if !self.gyroAvailable {
             return false
@@ -101,9 +107,11 @@ public class SwiftySensorControl: CMMotionManager {
 // MARK: Extensions
 
 extension CMAcceleration {
-    /** Only for absolute average value given device regardless of direction.
-     *  It can be used to find how much power is given to device.
-     *  -returns: sqrt(pow(x, 2) + pow(y, 2) + pow(z, 2))
+    /**
+     Only for absolute average value given device regardless of direction.
+     It can be used to find how much power is given to device.
+     
+     -returns: sqrt(pow(x, 2) + pow(y, 2) + pow(z, 2))
      */
     public var integratedData: Double {
         get {
@@ -113,9 +121,11 @@ extension CMAcceleration {
 }
 
 extension CMRotationRate {
-    /** Only for absolute average value given device regardless of direction.
-     *  It can be used to find how much device rotated.
-     *  - return: sqrt(pow(x, 2) + pow(y, 2) + pow(z, 2))
+    /**
+     Only for absolute average value given device regardless of direction.
+     It can be used to find how much device rotated.
+     
+     -returns: sqrt(pow(x, 2) + pow(y, 2) + pow(z, 2))
      */
     public var integratedData: Double {
         get {
@@ -125,6 +135,7 @@ extension CMRotationRate {
 }
 
 // MARK: Additional Functions
+
 func ErrorLog(message: String = "", _ path: String = #file, _ line: Int = #line, _ function: String = #function) {
 //    let file = path.componentsSeparatedByString("/").last!.componentsSeparatedByString(".").first!
     NSLog("\(path).\(line).\(function): \(message)")
