@@ -104,7 +104,7 @@ public class SwiftySensorControl: CMMotionManager {
     
 }
 
-// MARK: Extensions
+// MARK: - Extensions
 
 extension CMAcceleration {
     /**
@@ -134,7 +134,7 @@ extension CMRotationRate {
     }
 }
 
-// MARK: Additional Functions
+// MARK: - Additional Functions
 
 func ErrorLog(message: String = "", _ path: String = #file, _ line: Int = #line, _ function: String = #function) {
 //    let file = path.componentsSeparatedByString("/").last!.componentsSeparatedByString(".").first!
