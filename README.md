@@ -4,7 +4,7 @@
 
 1. [Why SwiftySensorControl?](## Why is the SwiftySensorControl useful?
 )
-1. [What kind of sensors are there?](What-kind-of-sensor-datas-are-there-in-SwiftySensorControl?)
+1. [What kind of sensors are there?](#What-kind-of-sensor-datas-are-there-in-SwiftySensorControl?)
 1. [Requirements](#requirements)
 1. [Integration](#integration)
 1. [Usage](#usage)
