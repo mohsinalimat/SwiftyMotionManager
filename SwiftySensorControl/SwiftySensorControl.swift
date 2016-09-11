@@ -2,7 +2,7 @@
 //  SwiftySensorControl.swift
 //  SwiftySensorControl
 //
-//  Created by Jeff Kang on 9/1/16.
+//  https://github.com/JeffGuKang/SwiftySensorControl
 //  Copyright © 2016 jeffgukang. All rights reserved.
 //
 
