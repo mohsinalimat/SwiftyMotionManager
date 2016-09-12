@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import SwiftySensorControl
+import SwiftyMotionManager
 
 class AccelerometerTests: XCTestCase {
     
@@ -24,8 +24,8 @@ class AccelerometerTests: XCTestCase {
     func testAccelerometerAvailable() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        let sensorControl = SwiftySensorControl.sharedInstance
-        XCTAssertEqual(true, sensorControl.accelerometerAvailable)
+        let swiftyMotionManager = SwiftyMotionManager.sharedInstance
+        XCTAssertEqual(true, swiftyMotionManager.accelerometerAvailable)
     }
     
     func testPerformanceExample() {

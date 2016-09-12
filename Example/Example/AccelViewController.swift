@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SwiftySensorControl
+import SwiftyMotionManager
 import CoreMotion
 
 class AccelViewController: UIViewController {
@@ -17,7 +17,7 @@ class AccelViewController: UIViewController {
     @IBOutlet weak var zLabel: UILabel!
     @IBOutlet weak var aveLabel: UILabel!
     
-    let sensorControl = SwiftySensorControl.sharedInstance
+    let swiftyMotionManager = SwiftyMotionManager.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,7 @@ class AccelViewController: UIViewController {
         zLabel.adjustsFontSizeToFitWidth = true
         aveLabel.adjustsFontSizeToFitWidth = true
         
-        sensorControl.startAccelelometerUpdatesToMainQueue { (accellerometerData, error) in
+        swiftyMotionManager.startAccelelometerUpdatesToMainQueue { (accellerometerData, error) in
             self.xLabel.text = accellerometerData?.acceleration.x.description
             self.yLabel.text = accellerometerData?.acceleration.y.description
             self.zLabel.text = accellerometerData?.acceleration.z.description

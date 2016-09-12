@@ -1,15 +1,15 @@
 //
-//  SwiftySensorControlTests.swift
-//  SwiftySensorControlTests
+//  SwiftyMotionManagerTests.swift
+//  SwiftyMotionManagerTests
 //
 //  Created by Jeff Kang on 9/1/16.
 //  Copyright © 2016 jeffgukang. All rights reserved.
 //
 
 import XCTest
-@testable import SwiftySensorControl
+@testable import SwiftyMotionManager
 
-class SwiftySensorControlTests: XCTestCase {
+class SwiftyMotionManagerTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

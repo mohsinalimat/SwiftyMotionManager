@@ -1,9 +1,9 @@
 //: Playground - noun: a place where people can play
 
-import SwiftySensorControl
+import SwiftyMotionManager
 
 var str = "Hello, playground"
 
-let control = SwiftySensorControl()
+let control = SwiftyMotionManager()
 control.startAccelerometerUpdatesIfItCan()
 

@@ -1,16 +1,16 @@
 //
-//  SwiftySensorControl.swift
-//  SwiftySensorControl
+//  SwiftyMotionManager.swift
+//  SwiftyMotionManager
 //
-//  https://github.com/JeffGuKang/SwiftySensorControl
+//  https://github.com/JeffGuKang/SwiftyMotionManager
 //  Copyright © 2016 jeffgukang. All rights reserved.
 //
 
 import Foundation
 import CoreMotion
 
-public class SwiftySensorControl: CMMotionManager {
-    static public let sharedInstance = SwiftySensorControl()
+public class SwiftyMotionManager: CMMotionManager {
+    static public let sharedInstance = SwiftyMotionManager()
     
     override public init() {
         super.init()

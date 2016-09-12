@@ -15,9 +15,23 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CC6643551D78552F00212EBA"
-               BuildableName = "SwiftySensorControl.framework"
-               BlueprintName = "SwiftySensorControl"
-               ReferencedContainer = "container:SwiftySensorControl.xcodeproj">
+               BuildableName = "SwiftyMotionManager.framework"
+               BlueprintName = "SwiftyMotionManager"
+               ReferencedContainer = "container:SwiftyMotionManager.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CC66435F1D78552F00212EBA"
+               BuildableName = "SwiftyMotionManager.xctest"
+               BlueprintName = "SwiftyMotionManagerTests"
+               ReferencedContainer = "container:SwiftyMotionManager.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,24 +42,14 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CC66435F1D78552F00212EBA"
-               BuildableName = "SwiftySensorControlTests.xctest"
-               BlueprintName = "SwiftySensorControlTests"
-               ReferencedContainer = "container:SwiftySensorControl.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CC6643551D78552F00212EBA"
-            BuildableName = "SwiftySensorControl.framework"
-            BlueprintName = "SwiftySensorControl"
-            ReferencedContainer = "container:SwiftySensorControl.xcodeproj">
+            BuildableName = "SwiftyMotionManager.framework"
+            BlueprintName = "SwiftyMotionManager"
+            ReferencedContainer = "container:SwiftyMotionManager.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -65,9 +69,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CC6643551D78552F00212EBA"
-            BuildableName = "SwiftySensorControl.framework"
-            BlueprintName = "SwiftySensorControl"
-            ReferencedContainer = "container:SwiftySensorControl.xcodeproj">
+            BuildableName = "SwiftyMotionManager.framework"
+            BlueprintName = "SwiftyMotionManager"
+            ReferencedContainer = "container:SwiftyMotionManager.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -83,9 +87,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CC6643551D78552F00212EBA"
-            BuildableName = "SwiftySensorControl.framework"
-            BlueprintName = "SwiftySensorControl"
-            ReferencedContainer = "container:SwiftySensorControl.xcodeproj">
+            BuildableName = "SwiftyMotionManager.framework"
+            BlueprintName = "SwiftyMotionManager"
+            ReferencedContainer = "container:SwiftyMotionManager.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

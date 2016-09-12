@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SwiftySensorControl
+import SwiftyMotionManager
 import CoreMotion
 
 class GyroViewController: UIViewController {
@@ -17,7 +17,7 @@ class GyroViewController: UIViewController {
     @IBOutlet weak var zLabel: UILabel!
     @IBOutlet weak var aveLabel: UILabel!
 
-    let sensorControl = SwiftySensorControl.sharedInstance
+    let swiftyMotionManager = SwiftyMotionManager.sharedInstance
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,7 @@ class GyroViewController: UIViewController {
         zLabel.adjustsFontSizeToFitWidth = true
         aveLabel.adjustsFontSizeToFitWidth = true
         
-        sensorControl.startGyroUpdatesToMainQueue { (gyroData, error) in
+        swiftyMotionManager.startGyroUpdatesToMainQueue { (gyroData, error) in
             self.xLabel.text = gyroData?.rotationRate.x.description
             self.yLabel.text = gyroData?.rotationRate.y.description
             self.zLabel.text = gyroData?.rotationRate.z.description

@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CC66435A1D78552F00212EBA /* SwiftySensorControl.h in Headers */ = {isa = PBXBuildFile; fileRef = CC6643591D78552F00212EBA /* SwiftySensorControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CC6643611D78552F00212EBA /* SwiftySensorControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC6643561D78552F00212EBA /* SwiftySensorControl.framework */; };
-		CC6643661D78552F00212EBA /* SwiftySensorControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6643651D78552F00212EBA /* SwiftySensorControlTests.swift */; };
-		CC6643B71D785DC000212EBA /* SwiftySensorControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6643B61D785DC000212EBA /* SwiftySensorControl.swift */; };
+		CC6643611D78552F00212EBA /* SwiftyMotionManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC6643561D78552F00212EBA /* SwiftyMotionManager.framework */; };
+		CC99786E1D86929300A27297 /* SwiftyMotionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CC99786B1D86929300A27297 /* SwiftyMotionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CC99786F1D86929300A27297 /* SwiftyMotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC99786C1D86929300A27297 /* SwiftyMotionManager.swift */; };
+		CC9978751D86954600A27297 /* SwiftyMotionManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9978711D8692A500A27297 /* SwiftyMotionManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,15 +24,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CC6643561D78552F00212EBA /* SwiftySensorControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftySensorControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CC6643591D78552F00212EBA /* SwiftySensorControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftySensorControl.h; sourceTree = "<group>"; };
-		CC66435B1D78552F00212EBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CC6643601D78552F00212EBA /* SwiftySensorControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftySensorControlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CC6643651D78552F00212EBA /* SwiftySensorControlTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftySensorControlTests.swift; sourceTree = "<group>"; };
-		CC6643671D78552F00212EBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC6643561D78552F00212EBA /* SwiftyMotionManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyMotionManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC6643601D78552F00212EBA /* SwiftyMotionManager.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyMotionManager.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC6643A41D785C9600212EBA /* SwiftySeonsorControl Watch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftySeonsorControl Watch.h"; sourceTree = "<group>"; };
 		CC6643A61D785C9600212EBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CC6643B61D785DC000212EBA /* SwiftySensorControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftySensorControl.swift; sourceTree = "<group>"; };
+		CC99786B1D86929300A27297 /* SwiftyMotionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SwiftyMotionManager.h; path = SwiftyMotionManager/SwiftyMotionManager.h; sourceTree = SOURCE_ROOT; };
+		CC99786C1D86929300A27297 /* SwiftyMotionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyMotionManager.swift; path = SwiftyMotionManager/SwiftyMotionManager.swift; sourceTree = SOURCE_ROOT; };
+		CC99786D1D86929300A27297 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SwiftyMotionManager/Info.plist; sourceTree = SOURCE_ROOT; };
+		CC9978711D8692A500A27297 /* SwiftyMotionManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyMotionManagerTests.swift; path = SwiftyMotionManagerTests/SwiftyMotionManagerTests.swift; sourceTree = SOURCE_ROOT; };
+		CC9978721D8692A500A27297 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SwiftyMotionManagerTests/Info.plist; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,7 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC6643611D78552F00212EBA /* SwiftySensorControl.framework in Frameworks */,
+				CC6643611D78552F00212EBA /* SwiftyMotionManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,8 +58,8 @@
 			isa = PBXGroup;
 			children = (
 				CC6643581D78552F00212EBA /* SwiftySensorControl */,
-				CC6643641D78552F00212EBA /* SwiftySensorControlTests */,
-				CC6643A31D785C9600212EBA /* SwiftySeonsorControl Watch */,
+				CC6643641D78552F00212EBA /* SwiftyMotionManagerTests */,
+				CC6643A31D785C9600212EBA /* SwiftyMotionManager Watch */,
 				CC6643571D78552F00212EBA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -67,8 +67,8 @@
 		CC6643571D78552F00212EBA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CC6643561D78552F00212EBA /* SwiftySensorControl.framework */,
-				CC6643601D78552F00212EBA /* SwiftySensorControlTests.xctest */,
+				CC6643561D78552F00212EBA /* SwiftyMotionManager.framework */,
+				CC6643601D78552F00212EBA /* SwiftyMotionManager.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -76,28 +76,30 @@
 		CC6643581D78552F00212EBA /* SwiftySensorControl */ = {
 			isa = PBXGroup;
 			children = (
-				CC6643591D78552F00212EBA /* SwiftySensorControl.h */,
-				CC66435B1D78552F00212EBA /* Info.plist */,
-				CC6643B61D785DC000212EBA /* SwiftySensorControl.swift */,
+				CC99786B1D86929300A27297 /* SwiftyMotionManager.h */,
+				CC99786C1D86929300A27297 /* SwiftyMotionManager.swift */,
+				CC99786D1D86929300A27297 /* Info.plist */,
 			);
 			path = SwiftySensorControl;
 			sourceTree = "<group>";
 		};
-		CC6643641D78552F00212EBA /* SwiftySensorControlTests */ = {
+		CC6643641D78552F00212EBA /* SwiftyMotionManagerTests */ = {
 			isa = PBXGroup;
 			children = (
-				CC6643651D78552F00212EBA /* SwiftySensorControlTests.swift */,
-				CC6643671D78552F00212EBA /* Info.plist */,
+				CC9978711D8692A500A27297 /* SwiftyMotionManagerTests.swift */,
+				CC9978721D8692A500A27297 /* Info.plist */,
 			);
+			name = SwiftyMotionManagerTests;
 			path = SwiftySensorControlTests;
 			sourceTree = "<group>";
 		};
-		CC6643A31D785C9600212EBA /* SwiftySeonsorControl Watch */ = {
+		CC6643A31D785C9600212EBA /* SwiftyMotionManager Watch */ = {
 			isa = PBXGroup;
 			children = (
 				CC6643A41D785C9600212EBA /* SwiftySeonsorControl Watch.h */,
 				CC6643A61D785C9600212EBA /* Info.plist */,
 			);
+			name = "SwiftyMotionManager Watch";
 			path = "SwiftySeonsorControl Watch";
 			sourceTree = "<group>";
 		};
@@ -108,16 +110,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC66435A1D78552F00212EBA /* SwiftySensorControl.h in Headers */,
+				CC99786E1D86929300A27297 /* SwiftyMotionManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		CC6643551D78552F00212EBA /* SwiftySensorControl */ = {
+		CC6643551D78552F00212EBA /* SwiftyMotionManager */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CC66436A1D78552F00212EBA /* Build configuration list for PBXNativeTarget "SwiftySensorControl" */;
+			buildConfigurationList = CC66436A1D78552F00212EBA /* Build configuration list for PBXNativeTarget "SwiftyMotionManager" */;
 			buildPhases = (
 				CC6643511D78552F00212EBA /* Sources */,
 				CC6643521D78552F00212EBA /* Frameworks */,
@@ -128,14 +130,14 @@
 			);
 			dependencies = (
 			);
-			name = SwiftySensorControl;
+			name = SwiftyMotionManager;
 			productName = SwiftySensorControl;
-			productReference = CC6643561D78552F00212EBA /* SwiftySensorControl.framework */;
+			productReference = CC6643561D78552F00212EBA /* SwiftyMotionManager.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		CC66435F1D78552F00212EBA /* SwiftySensorControlTests */ = {
+		CC66435F1D78552F00212EBA /* SwiftyMotionManagerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CC66436D1D78552F00212EBA /* Build configuration list for PBXNativeTarget "SwiftySensorControlTests" */;
+			buildConfigurationList = CC66436D1D78552F00212EBA /* Build configuration list for PBXNativeTarget "SwiftyMotionManagerTests" */;
 			buildPhases = (
 				CC66435C1D78552F00212EBA /* Sources */,
 				CC66435D1D78552F00212EBA /* Frameworks */,
@@ -146,9 +148,9 @@
 			dependencies = (
 				CC6643631D78552F00212EBA /* PBXTargetDependency */,
 			);
-			name = SwiftySensorControlTests;
+			name = SwiftyMotionManagerTests;
 			productName = SwiftySensorControlTests;
-			productReference = CC6643601D78552F00212EBA /* SwiftySensorControlTests.xctest */;
+			productReference = CC6643601D78552F00212EBA /* SwiftyMotionManager.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -169,7 +171,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CC6643501D78552F00212EBA /* Build configuration list for PBXProject "SwiftySensorControl" */;
+			buildConfigurationList = CC6643501D78552F00212EBA /* Build configuration list for PBXProject "SwiftyMotionManager" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -181,8 +183,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CC6643551D78552F00212EBA /* SwiftySensorControl */,
-				CC66435F1D78552F00212EBA /* SwiftySensorControlTests */,
+				CC6643551D78552F00212EBA /* SwiftyMotionManager */,
+				CC66435F1D78552F00212EBA /* SwiftyMotionManagerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -209,7 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC6643B71D785DC000212EBA /* SwiftySensorControl.swift in Sources */,
+				CC99786F1D86929300A27297 /* SwiftyMotionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,7 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC6643661D78552F00212EBA /* SwiftySensorControlTests.swift in Sources */,
+				CC9978751D86954600A27297 /* SwiftyMotionManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,7 +228,7 @@
 /* Begin PBXTargetDependency section */
 		CC6643631D78552F00212EBA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CC6643551D78552F00212EBA /* SwiftySensorControl */;
+			target = CC6643551D78552F00212EBA /* SwiftyMotionManager */;
 			targetProxy = CC6643621D78552F00212EBA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -331,12 +333,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = SwiftySensorControl/Info.plist;
+				INFOPLIST_FILE = SwiftyMotionManager/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jeffgukang.SwiftySensorControl;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = jeffgukang.SwiftyMotionManager;
+				PRODUCT_NAME = SwiftyMotionManager;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -350,12 +352,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = SwiftySensorControl/Info.plist;
+				INFOPLIST_FILE = SwiftyMotionManager/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jeffgukang.SwiftySensorControl;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = jeffgukang.SwiftyMotionManager;
+				PRODUCT_NAME = SwiftyMotionManager;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -363,27 +365,27 @@
 		CC66436E1D78552F00212EBA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = SwiftySensorControlTests/Info.plist;
+				INFOPLIST_FILE = SwiftyMotionManagerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jeffgukang.SwiftySensorControlTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = jeffgukang.SwiftyMotionManager;
+				PRODUCT_NAME = SwiftyMotionManager;
 			};
 			name = Debug;
 		};
 		CC66436F1D78552F00212EBA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = SwiftySensorControlTests/Info.plist;
+				INFOPLIST_FILE = SwiftyMotionManagerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jeffgukang.SwiftySensorControlTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = jeffgukang.SwiftyMotionManager;
+				PRODUCT_NAME = SwiftyMotionManager;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CC6643501D78552F00212EBA /* Build configuration list for PBXProject "SwiftySensorControl" */ = {
+		CC6643501D78552F00212EBA /* Build configuration list for PBXProject "SwiftyMotionManager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CC6643681D78552F00212EBA /* Debug */,
@@ -392,7 +394,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CC66436A1D78552F00212EBA /* Build configuration list for PBXNativeTarget "SwiftySensorControl" */ = {
+		CC66436A1D78552F00212EBA /* Build configuration list for PBXNativeTarget "SwiftyMotionManager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CC66436B1D78552F00212EBA /* Debug */,
@@ -401,7 +403,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CC66436D1D78552F00212EBA /* Build configuration list for PBXNativeTarget "SwiftySensorControlTests" */ = {
+		CC66436D1D78552F00212EBA /* Build configuration list for PBXNativeTarget "SwiftyMotionManagerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CC66436E1D78552F00212EBA /* Debug */,
