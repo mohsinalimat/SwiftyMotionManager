@@ -57,7 +57,7 @@
 		CC66434C1D78552F00212EBA = {
 			isa = PBXGroup;
 			children = (
-				CC6643581D78552F00212EBA /* SwiftySensorControl */,
+				CC6643581D78552F00212EBA /* SwiftyMotionManager */,
 				CC6643641D78552F00212EBA /* SwiftyMotionManagerTests */,
 				CC6643A31D785C9600212EBA /* SwiftyMotionManager Watch */,
 				CC6643571D78552F00212EBA /* Products */,
@@ -73,13 +73,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CC6643581D78552F00212EBA /* SwiftySensorControl */ = {
+		CC6643581D78552F00212EBA /* SwiftyMotionManager */ = {
 			isa = PBXGroup;
 			children = (
 				CC99786B1D86929300A27297 /* SwiftyMotionManager.h */,
 				CC99786C1D86929300A27297 /* SwiftyMotionManager.swift */,
 				CC99786D1D86929300A27297 /* Info.plist */,
 			);
+			name = SwiftyMotionManager;
 			path = SwiftySensorControl;
 			sourceTree = "<group>";
 		};
