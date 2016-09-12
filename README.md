@@ -1,31 +1,24 @@
 # SwiftySensorControl
 
-**SwiftySensorControl** helps to use various sensors' data instead of [CMMotionManager](https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/).
+**SwiftySenserControl** is an alternative for [CMMotionManager](https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/).
 
-1. [Why SwiftySensorControl?](## Why is the SwiftySensorControl useful?
-)
-1. [What kind of sensors are there?](#What-kind-of-sensor-datas-are-there-in-SwiftySensorControl?)
+1. [Why SwiftySensorControl?](#why-swiftysensorcontrol)
+1. [What kind of data can SwiftySensorControl read?](#what-kind-of-data-can-swiftysensorcontrol-read)
 1. [Requirements](#requirements)
 1. [Integration](#integration)
 1. [Usage](#usage)
 
-## Why is the SwiftySensorControl useful?
+## Why SwiftySensorControl?
 
-First of all, CMMotionManager is strongly recommended to use only a single instance. Using multiple instances can cause lack of system to rate of getting datas.
+First of all, Apple recommends developers to create only one instance of [CMMotionManager](https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/) throughout the lifetime of an app. Using multiple instances may slow down the rate of data input from the sensors.
 
 >An app should create only a single instance of the CMMotionManager class. Multiple instances of this class can affect the rate at which data is received from the accelerometer and gyroscope.
 
-in [CMMotionManager](https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/)
+SwiftySensorControl uses singleton pattern so that developers never have to create an instance to get data from motion sensors. Of course, SwiftySensorControl has all the capabilities of CMMotionManager since it is a subclass of CMMotionManager.
 
-SwiftySensorControl was made by singleton pattern. Therefore, you do not need to worry about irregular sensor data informations. Surely, it can use all CMMotionManager's features because it inherits from
+Additionally, There are other features that you may find useful.
 
-```
-  let sensorControl = SwiftySensorControl.sharedInstance
-```
-
-And there are other useful features that make you simple to handle sensor datas.
-
-## What kind of sensor datas are there in SwiftySensorControl?
+## What kind of data can SwiftySensorControl read?
 
 - Accelerometer
 - Gyro
@@ -41,11 +34,9 @@ plan
 
 ## Integration
 
-#### Manually (iOS 7+, OS X 10.9+)
-To use this library in your project manually you may:
-
-1. for Projects, just drag SwiftySensorControl.swift to your project tree.
-2. for Workspaces, include the whole SwiftySensorControl.xcodeproj
+#### Manually (iOS 8+, OS X 10.9+)
+1. for Projects, just drag and drop SwiftySensorControl.swift to your project tree.
+2. for Workspaces, include the entire SwiftySensorControl project.
 
 
 ## Usage
@@ -54,9 +45,7 @@ To use this library in your project manually you may:
 
 ```swift
 import SwiftySensorControl
-```
 
-```swift
 let sensorControl = SwiftySensorControl.sharedInstance
 ```
 
