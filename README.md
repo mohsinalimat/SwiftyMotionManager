@@ -1,24 +1,24 @@
-# SwiftySensorControl
+# SwiftyMotionManager
 
 **SwiftySenserControl** is an alternative for [CMMotionManager](https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/).
 
-1. [Why SwiftySensorControl?](#why-swiftysensorcontrol)
-1. [What kind of data can SwiftySensorControl read?](#what-kind-of-data-can-swiftysensorcontrol-read)
+1. [Why SwiftyMotionManager?](#why-SwiftyMotionManager)
+1. [What kind of data can SwiftyMotionManager read?](#what-kind-of-data-can-SwiftyMotionManager-read)
 1. [Requirements](#requirements)
 1. [Integration](#integration)
 1. [Usage](#usage)
 
-## Why SwiftySensorControl?
+## Why SwiftyMotionManager?
 
 First of all, Apple recommends developers to create only one instance of [CMMotionManager](https://developer.apple.com/library/ios/documentation/CoreMotion/Reference/CMMotionManager_Class/) throughout the lifetime of an app. Using multiple instances may slow down the rate of data input from the sensors.
 
 >An app should create only a single instance of the CMMotionManager class. Multiple instances of this class can affect the rate at which data is received from the accelerometer and gyroscope.
 
-SwiftySensorControl uses singleton pattern so that developers never have to create an instance to get data from motion sensors. Of course, SwiftySensorControl has all the capabilities of CMMotionManager since it is a subclass of CMMotionManager.
+SwiftyMotionManager uses singleton pattern so that developers never have to create an instance to get data from motion sensors. Of course, SwiftyMotionManager has all the capabilities of CMMotionManager since it is a subclass of CMMotionManager.
 
 Additionally, There are other features that you may find useful.
 
-## What kind of data can SwiftySensorControl read?
+## What kind of data can SwiftyMotionManager read?
 
 - Accelerometer
 - Gyro
@@ -35,8 +35,8 @@ plan
 ## Integration
 
 #### Manually (iOS 8+, OS X 10.9+)
-1. for Projects, just drag and drop SwiftySensorControl.swift to your project tree.
-2. for Workspaces, include the entire SwiftySensorControl project.
+1. for Projects, just drag and drop SwiftyMotionManager.swift to your project tree.
+2. for Workspaces, include the entire SwiftyMotionManager project.
 
 
 ## Usage
@@ -44,9 +44,9 @@ plan
 #### Initialization
 
 ```swift
-import SwiftySensorControl
+import SwiftyMotionManager
 
-let sensorControl = SwiftySensorControl.sharedInstance
+let motionControl = SwiftyMotionManager.sharedInstance
 ```
 
 #### Accelerometer
@@ -54,7 +54,7 @@ let sensorControl = SwiftySensorControl.sharedInstance
 ```swift
 override func viewDidLoad() {
   super.viewDidLoad()
-  sensorControl.startAccelelometerUpdatesToMainQueue { (accellerometerData, error) in
+  motionControl.startAccelelometerUpdatesToMainQueue { (accellerometerData, error) in
       self.xLabel.text = accellerometerData?.acceleration.x.description
       self.yLabel.text = accellerometerData?.acceleration.y.description
       self.zLabel.text = accellerometerData?.acceleration.z.description
@@ -67,7 +67,7 @@ override func viewDidLoad() {
 ```swift
 override func viewDidLoad() {
   super.viewDidLoad()
-  sensorControl.startGyroUpdatesToMainQueue { (gyroData, error) in
+  motionControl.startGyroUpdatesToMainQueue { (gyroData, error) in
       self.xLabel.text = gyroData?.rotationRate.x.description
       self.yLabel.text = gyroData?.rotationRate.y.description
       self.zLabel.text = gyroData?.rotationRate.z.description
