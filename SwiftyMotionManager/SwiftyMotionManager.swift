@@ -9,8 +9,8 @@
 import Foundation
 import CoreMotion
 
-public class SwiftyMotionManager: CMMotionManager {
-    static public let sharedInstance = SwiftyMotionManager()
+open class SwiftyMotionManager: CMMotionManager {
+    static open let sharedInstance = SwiftyMotionManager()
     
     override public init() {
         super.init()
@@ -22,43 +22,37 @@ public class SwiftyMotionManager: CMMotionManager {
     /**
      You can get the latest accelerometer data through the accelerometerData property. You must call stopAccelerometerUpdates when you no longer want your app to process accelerometer updates.
      */
-    public func startAccelerometerUpdatesIfAvailable() -> Bool{
-        if !self.accelerometerAvailable {
-            return false
+    open func startAccelerometerUpdatesIfAvailable() {
+        if !self.isAccelerometerAvailable {
+            ErrorLog("Accelerometer is not available")
         } else {
             super.startAccelerometerUpdates()
-            return true
         }
     }
 
     /**
      Accelerometer data will treat by handler whenever it updates.
      - parameter handler: A block that is invoked with each update to handle new accelerometer data. The block must conform to the CMAccelerometerHandler type.
-     
-     - returns: Return false when accelerometer is not available.
      */
-    public func startAccelelometerUpdatesToMainQueue(withHandler handler: CMAccelerometerHandler) -> Bool {
-        if !self.accelerometerAvailable {
-            return false
+    open func startAccelelometerUpdatesToMainQueue(withHandler handler: @escaping CMAccelerometerHandler) {
+        if !self.isAccelerometerAvailable {
+            ErrorLog("Accelerometer is not available")
         } else {
-            super.startAccelerometerUpdatesToQueue(NSOperationQueue.mainQueue(), withHandler: handler)
-            return true
+            super.startAccelerometerUpdates(to: OperationQueue.main, withHandler: handler)
         }
     }
     
     /** 
      Accelerometer data will treat by handler whenever it updates by interval.
+     - parameter interval: TimeInterval type. Unit is a second.
      - parameter handler: A block that is invoked with each update to handle new accelerometer data. The block must conform to the CMAccelerometerHandler type.
-     
-     - returns: Return false when accelerometer is not available.
      */
-    public func startAccelelometerUpdatesToMainQueue(byInterval interval:NSTimeInterval, withHandler handler: CMAccelerometerHandler) -> Bool {
-        if !self.accelerometerAvailable {
-            return false
+    open func startAccelelometerUpdatesToMainQueue(byInterval interval:TimeInterval, withHandler handler: @escaping CMAccelerometerHandler) {
+        if !self.isAccelerometerAvailable {
+            ErrorLog("Accelerometer is not available")
         } else {
             super.accelerometerUpdateInterval = interval
-            super.startAccelerometerUpdatesToQueue(NSOperationQueue.mainQueue(), withHandler: handler)
-            return true
+            super.startAccelerometerUpdates(to: OperationQueue.main, withHandler: handler)
         }
     }
     
@@ -67,34 +61,37 @@ public class SwiftyMotionManager: CMMotionManager {
     /**
      You can get the latest gyro data through the gyroData property. You must call stopGyroUpdates when you no longer want your app to process gyro updates.
     */
-    public func startGyroUpdatesIfAvailable() -> Bool {
-        if !self.gyroAvailable {
-            return false
+    open func startGyroUpdatesIfAvailable() {
+        if !self.isGyroAvailable {
+            ErrorLog("Gyro is not available")
         } else {
             super.startGyroUpdates()
-            return true
         }
     }    
     
-    /** 
+    /**
      Gyro data will treat by handler whenever it updates.
+     - parameter handler: A block that is invoked with each update to handle new gyro data. The block must conform to the CMGyroHandler type.
      */
-    public func startGyroUpdatesToMainQueue(withHandler handler: CMGyroHandler) -> Bool {
-        if !self.gyroAvailable {
-            return false
+    open func startGyroUpdatesToMainQueue(withHandler handler: @escaping CMGyroHandler) {
+        if !self.isGyroAvailable {
+            ErrorLog("Gyro is not available")
         } else {
-            super.startGyroUpdatesToQueue(NSOperationQueue.mainQueue(), withHandler: handler)
-            return true
+            super.startGyroUpdates(to: OperationQueue.main, withHandler: handler)
         }
     }
     
-    public func startGyroUpdatesToMainQueue(byInterval interval: NSTimeInterval, withHandler handler: CMGyroHandler) -> Bool {
-        if !self.gyroAvailable {
-            return false
+    /**
+     Gyro data will treat by handler whenever it updates.
+     - parameter interval: TimeInterval type. Unit is a second.
+     - parameter handler: A block that is invoked with each update to handle new gyro data. The block must conform to the CMGyroHandler type.
+     */
+    open func startGyroUpdatesToMainQueue(byInterval interval: TimeInterval, withHandler handler: @escaping CMGyroHandler) {
+        if !self.isGyroAvailable {
+            ErrorLog("Gyro is not available")
         } else {
             super.gyroUpdateInterval = interval
-            super.startGyroUpdatesToQueue(NSOperationQueue.mainQueue(), withHandler: handler)
-            return true
+            super.startGyroUpdates(to: OperationQueue.main, withHandler: handler)
         }
     }
 
@@ -136,7 +133,7 @@ extension CMRotationRate {
 
 // MARK: - Additional Functions
 
-func ErrorLog(message: String = "", _ path: String = #file, _ line: Int = #line, _ function: String = #function) {
+func ErrorLog(_ message: String = "", _ path: String = #file, _ line: Int = #line, _ function: String = #function) {
 //    let file = path.componentsSeparatedByString("/").last!.componentsSeparatedByString(".").first!
     NSLog("\(path).\(line).\(function): \(message)")
 }
