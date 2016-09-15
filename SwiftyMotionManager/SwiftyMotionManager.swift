@@ -22,12 +22,11 @@ open class SwiftyMotionManager: CMMotionManager {
     /**
      You can get the latest accelerometer data through the accelerometerData property. You must call stopAccelerometerUpdates when you no longer want your app to process accelerometer updates.
      */
-    open func startAccelerometerUpdatesIfAvailable() -> Bool{
+    open func startAccelerometerUpdatesIfAvailable() {
         if !self.isAccelerometerAvailable {
-            return false
+            ErrorLog("Accelerometer is not available")
         } else {
             super.startAccelerometerUpdates()
-            return true
         }
     }
 
@@ -74,12 +73,11 @@ open class SwiftyMotionManager: CMMotionManager {
      Gyro data will treat by handler whenever it updates.
      - parameter handler: A block that is invoked with each update to handle new gyro data. The block must conform to the CMGyroHandler type.
      */
-    open func startGyroUpdatesToMainQueue(withHandler handler: @escaping CMGyroHandler) -> Bool {
+    open func startGyroUpdatesToMainQueue(withHandler handler: @escaping CMGyroHandler) {
         if !self.isGyroAvailable {
-            return false
+            ErrorLog("Gyro is not available")
         } else {
             super.startGyroUpdates(to: OperationQueue.main, withHandler: handler)
-            return true
         }
     }
     
