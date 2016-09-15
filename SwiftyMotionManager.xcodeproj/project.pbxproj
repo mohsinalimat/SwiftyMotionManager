@@ -170,6 +170,7 @@
 					};
 					CC66435F1D78552F00212EBA = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -382,6 +383,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jeffgukang.SwiftyMotionManager;
 				PRODUCT_NAME = SwiftyMotionManager;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -392,6 +394,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jeffgukang.SwiftyMotionManager;
 				PRODUCT_NAME = SwiftyMotionManager;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
