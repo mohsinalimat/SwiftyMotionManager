@@ -26,8 +26,6 @@
 /* Begin PBXFileReference section */
 		CC6643561D78552F00212EBA /* SwiftyMotionManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyMotionManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC6643601D78552F00212EBA /* SwiftyMotionManager.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyMotionManager.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CC6643A41D785C9600212EBA /* SwiftySeonsorControl Watch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftySeonsorControl Watch.h"; sourceTree = "<group>"; };
-		CC6643A61D785C9600212EBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC99786B1D86929300A27297 /* SwiftyMotionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SwiftyMotionManager.h; path = SwiftyMotionManager/SwiftyMotionManager.h; sourceTree = SOURCE_ROOT; };
 		CC99786C1D86929300A27297 /* SwiftyMotionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyMotionManager.swift; path = SwiftyMotionManager/SwiftyMotionManager.swift; sourceTree = SOURCE_ROOT; };
 		CC99786D1D86929300A27297 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SwiftyMotionManager/Info.plist; sourceTree = SOURCE_ROOT; };
@@ -59,7 +57,6 @@
 			children = (
 				CC6643581D78552F00212EBA /* SwiftyMotionManager */,
 				CC6643641D78552F00212EBA /* SwiftyMotionManagerTests */,
-				CC6643A31D785C9600212EBA /* SwiftyMotionManager Watch */,
 				CC6643571D78552F00212EBA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -92,16 +89,6 @@
 			);
 			name = SwiftyMotionManagerTests;
 			path = SwiftySensorControlTests;
-			sourceTree = "<group>";
-		};
-		CC6643A31D785C9600212EBA /* SwiftyMotionManager Watch */ = {
-			isa = PBXGroup;
-			children = (
-				CC6643A41D785C9600212EBA /* SwiftySeonsorControl Watch.h */,
-				CC6643A61D785C9600212EBA /* Info.plist */,
-			);
-			name = "SwiftyMotionManager Watch";
-			path = "SwiftySeonsorControl Watch";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
