@@ -13,6 +13,7 @@
 		CC6643851D785BCF00212EBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC6643841D785BCF00212EBA /* Assets.xcassets */; };
 		CC6643881D785BCF00212EBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC6643861D785BCF00212EBA /* LaunchScreen.storyboard */; };
 		CC6643931D785BCF00212EBA /* ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6643921D785BCF00212EBA /* ExampleTests.swift */; };
+		CC8DA3221D8ED2F600D9D95E /* MagnetometerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8DA3211D8ED2F600D9D95E /* MagnetometerViewController.swift */; };
 		CC9978771D8696D300A27297 /* SwiftyMotionManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC9978681D86926200A27297 /* SwiftyMotionManager.framework */; };
 		CC9978781D8696D300A27297 /* SwiftyMotionManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CC9978681D86926200A27297 /* SwiftyMotionManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CCAD43D41D7C3E1A00EDAA22 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCAD43D31D7C3E1A00EDAA22 /* CoreMotion.framework */; };
@@ -76,6 +77,7 @@
 		CC66438E1D785BCF00212EBA /* ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC6643921D785BCF00212EBA /* ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTests.swift; sourceTree = "<group>"; };
 		CC6643941D785BCF00212EBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC8DA3211D8ED2F600D9D95E /* MagnetometerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetometerViewController.swift; sourceTree = "<group>"; };
 		CC9978621D86926200A27297 /* SwiftyMotionManager.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyMotionManager.xcodeproj; path = ../SwiftyMotionManager.xcodeproj; sourceTree = "<group>"; };
 		CCAD43D31D7C3E1A00EDAA22 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		CCD8225C1D82E1E300ADC0A3 /* AccelerometerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccelerometerTests.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				CC66437D1D785BCF00212EBA /* AppDelegate.swift */,
 				CC66437F1D785BCF00212EBA /* AccelViewController.swift */,
 				CCD822641D82F54E00ADC0A3 /* GyroViewController.swift */,
+				CC8DA3211D8ED2F600D9D95E /* MagnetometerViewController.swift */,
 				CC6643811D785BCF00212EBA /* Main.storyboard */,
 				CC6643841D785BCF00212EBA /* Assets.xcassets */,
 				CC6643861D785BCF00212EBA /* LaunchScreen.storyboard */,
@@ -284,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC8DA3221D8ED2F600D9D95E /* MagnetometerViewController.swift in Sources */,
 				CCD822651D82F54E00ADC0A3 /* GyroViewController.swift in Sources */,
 				CC6643801D785BCF00212EBA /* AccelViewController.swift in Sources */,
 				CC66437E1D785BCF00212EBA /* AppDelegate.swift in Sources */,
