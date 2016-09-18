@@ -17,6 +17,13 @@ open class SwiftyMotionManager: CMMotionManager {
     }
     
     
+    open func stopSwiftyMotionManager() {
+        super.stopAccelerometerUpdates()
+        super.stopGyroUpdates()
+        super.stopMagnetometerUpdates()
+        super.stopDeviceMotionUpdates()
+    }
+    
     // MARK: Accelerometer
     
     /**
@@ -32,7 +39,8 @@ open class SwiftyMotionManager: CMMotionManager {
 
     /**
      Accelerometer data will treat by handler whenever it updates.
-     - parameter handler: A block that is invoked with each update to handle new accelerometer data. The block must conform to the CMAccelerometerHandler type.
+     - parameters:
+        - handler: A block that is invoked with each update to handle new accelerometer data. The block must conform to the CMAccelerometerHandler type.
      */
     open func startAccelelometerUpdatesToMainQueue(withHandler handler: @escaping CMAccelerometerHandler) {
         if !self.isAccelerometerAvailable {
@@ -44,8 +52,10 @@ open class SwiftyMotionManager: CMMotionManager {
     
     /** 
      Accelerometer data will treat by handler whenever it updates by interval.
-     - parameter interval: TimeInterval type. Unit is a second.
-     - parameter handler: A block that is invoked with each update to handle new accelerometer data. The block must conform to the CMAccelerometerHandler type.
+     
+     - parameters:
+        - interval: TimeInterval type. Unit is a second.
+        - handler: A block that is invoked with each update to handle new accelerometer data. The block must conform to the CMAccelerometerHandler type.
      */
     open func startAccelelometerUpdatesToMainQueue(byInterval interval:TimeInterval, withHandler handler: @escaping CMAccelerometerHandler) {
         if !self.isAccelerometerAvailable {
@@ -71,7 +81,9 @@ open class SwiftyMotionManager: CMMotionManager {
     
     /**
      Gyro data will treat by handler whenever it updates.
-     - parameter handler: A block that is invoked with each update to handle new gyro data. The block must conform to the CMGyroHandler type.
+     
+     - parameters:
+        - handler: A block that is invoked with each update to handle new gyro data. The block must conform to the CMGyroHandler type.
      */
     open func startGyroUpdatesToMainQueue(withHandler handler: @escaping CMGyroHandler) {
         if !self.isGyroAvailable {
@@ -83,8 +95,10 @@ open class SwiftyMotionManager: CMMotionManager {
     
     /**
      Gyro data will treat by handler whenever it updates.
-     - parameter interval: TimeInterval type. Unit is a second.
-     - parameter handler: A block that is invoked with each update to handle new gyro data. The block must conform to the CMGyroHandler type.
+     
+     - parameters:
+        - interval: TimeInterval type. Unit is a second.
+        - handler: A block that is invoked with each update to handle new gyro data. The block must conform to the CMGyroHandler type.
      */
     open func startGyroUpdatesToMainQueue(byInterval interval: TimeInterval, withHandler handler: @escaping CMGyroHandler) {
         if !self.isGyroAvailable {
@@ -97,6 +111,31 @@ open class SwiftyMotionManager: CMMotionManager {
 
     // TODO: Magnetometer
     
+    open func startMagnetometerUpdatesIfAvailable() {
+        if !self.isMagnetometerAvailable {
+            ErrorLog("Magnetometer is not available")
+        } else {
+            super.startMagnetometerUpdates()
+        }
+    }
+    
+    open func startMagnetometerUpdatesToMainQueue(withHandler handler: @escaping CMMagnetometerHandler) {
+        if !self.isMagnetometerAvailable {
+            ErrorLog("Magnetometer is not available")
+        } else {
+            super.startMagnetometerUpdates(to: OperationQueue.main, withHandler: handler)
+        }
+    }
+    
+    open func startMagnetometerUpdatesToMainQueue(byInterval interval: TimeInterval, withHandler handler: @escaping CMMagnetometerHandler) {
+        if !self.isMagnetometerAvailable {
+            ErrorLog("Gyro is not available")
+        } else {
+            super.magnetometerUpdateInterval = interval
+            super.startMagnetometerUpdates(to: OperationQueue.main, withHandler: handler)
+        }
+    }
+    
     // TODO: Device motion
     
 }
@@ -108,7 +147,7 @@ extension CMAcceleration {
      Only for absolute average value given device regardless of direction.
      It can be used to find how much power is given to device.
      
-     -returns: sqrt(pow(x, 2) + pow(y, 2) + pow(z, 2))
+     - returns: sqrt(pow(x, 2) + pow(y, 2) + pow(z, 2))
      */
     public var integratedData: Double {
         get {
@@ -124,6 +163,14 @@ extension CMRotationRate {
      
      -returns: sqrt(pow(x, 2) + pow(y, 2) + pow(z, 2))
      */
+    public var integratedData: Double {
+        get {
+            return sqrt(pow(x, 2) + pow(y, 2) + pow(z, 2))
+        }
+    }
+}
+
+extension CMMagneticField {
     public var integratedData: Double {
         get {
             return sqrt(pow(x, 2) + pow(y, 2) + pow(z, 2))
