@@ -11,6 +11,7 @@ import CoreMotion
 
 open class SwiftyMotionManager: CMMotionManager {
     static open let sharedInstance = SwiftyMotionManager()
+    private let motionQueue = OperationQueue()
     
     override public init() {
         super.init()
@@ -42,11 +43,11 @@ open class SwiftyMotionManager: CMMotionManager {
      - parameters:
         - handler: A block that is invoked with each update to handle new accelerometer data. The block must conform to the CMAccelerometerHandler type.
      */
-    open func startAccelelometerUpdatesToMainQueue(withHandler handler: @escaping CMAccelerometerHandler) {
+    open func startAccelelometerUpdatesToNewQueue(withHandler handler: @escaping CMAccelerometerHandler) {
         if !self.isAccelerometerAvailable {
             ErrorLog("Accelerometer is not available")
         } else {
-            super.startAccelerometerUpdates(to: OperationQueue.main, withHandler: handler)
+            super.startAccelerometerUpdates(to: motionQueue, withHandler: handler)
         }
     }
     
@@ -57,12 +58,12 @@ open class SwiftyMotionManager: CMMotionManager {
         - interval: TimeInterval type. Unit is a second.
         - handler: A block that is invoked with each update to handle new accelerometer data. The block must conform to the CMAccelerometerHandler type.
      */
-    open func startAccelelometerUpdatesToMainQueue(byInterval interval:TimeInterval, withHandler handler: @escaping CMAccelerometerHandler) {
+    open func startAccelelometerUpdatesToNewQueue(byInterval interval:TimeInterval, withHandler handler: @escaping CMAccelerometerHandler) {
         if !self.isAccelerometerAvailable {
             ErrorLog("Accelerometer is not available")
         } else {
             super.accelerometerUpdateInterval = interval
-            super.startAccelerometerUpdates(to: OperationQueue.main, withHandler: handler)
+            super.startAccelerometerUpdates(to: motionQueue, withHandler: handler)
         }
     }
     
@@ -85,11 +86,11 @@ open class SwiftyMotionManager: CMMotionManager {
      - parameters:
         - handler: A block that is invoked with each update to handle new gyro data. The block must conform to the CMGyroHandler type.
      */
-    open func startGyroUpdatesToMainQueue(withHandler handler: @escaping CMGyroHandler) {
+    open func startGyroUpdatesToNewQueue(withHandler handler: @escaping CMGyroHandler) {
         if !self.isGyroAvailable {
             ErrorLog("Gyro is not available")
         } else {
-            super.startGyroUpdates(to: OperationQueue.main, withHandler: handler)
+            super.startGyroUpdates(to: motionQueue, withHandler: handler)
         }
     }
     
@@ -100,16 +101,16 @@ open class SwiftyMotionManager: CMMotionManager {
         - interval: TimeInterval type. Unit is a second.
         - handler: A block that is invoked with each update to handle new gyro data. The block must conform to the CMGyroHandler type.
      */
-    open func startGyroUpdatesToMainQueue(byInterval interval: TimeInterval, withHandler handler: @escaping CMGyroHandler) {
+    open func startGyroUpdatesToNewQueue(byInterval interval: TimeInterval, withHandler handler: @escaping CMGyroHandler) {
         if !self.isGyroAvailable {
             ErrorLog("Gyro is not available")
         } else {
             super.gyroUpdateInterval = interval
-            super.startGyroUpdates(to: OperationQueue.main, withHandler: handler)
+            super.startGyroUpdates(to: motionQueue, withHandler: handler)
         }
     }
 
-    // TODO: Magnetometer
+    // MARK: Magnetometer
     
     open func startMagnetometerUpdatesIfAvailable() {
         if !self.isMagnetometerAvailable {
@@ -119,24 +120,24 @@ open class SwiftyMotionManager: CMMotionManager {
         }
     }
     
-    open func startMagnetometerUpdatesToMainQueue(withHandler handler: @escaping CMMagnetometerHandler) {
+    open func startMagnetometerUpdatesToNewQueue(withHandler handler: @escaping CMMagnetometerHandler) {
         if !self.isMagnetometerAvailable {
             ErrorLog("Magnetometer is not available")
         } else {
-            super.startMagnetometerUpdates(to: OperationQueue.main, withHandler: handler)
+            super.startMagnetometerUpdates(to: motionQueue, withHandler: handler)
         }
     }
     
-    open func startMagnetometerUpdatesToMainQueue(byInterval interval: TimeInterval, withHandler handler: @escaping CMMagnetometerHandler) {
+    open func startMagnetometerUpdatesToNewQueue(byInterval interval: TimeInterval, withHandler handler: @escaping CMMagnetometerHandler) {
         if !self.isMagnetometerAvailable {
             ErrorLog("Gyro is not available")
         } else {
             super.magnetometerUpdateInterval = interval
-            super.startMagnetometerUpdates(to: OperationQueue.main, withHandler: handler)
+            super.startMagnetometerUpdates(to: motionQueue, withHandler: handler)
         }
     }
     
-    // TODO: Device motion
+    // MARK: Device motion
     
 }
 
