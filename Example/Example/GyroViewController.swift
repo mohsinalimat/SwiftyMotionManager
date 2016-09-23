@@ -28,7 +28,7 @@ class GyroViewController: UIViewController {
         zLabel.adjustsFontSizeToFitWidth = true
         aveLabel.adjustsFontSizeToFitWidth = true
         
-        swiftyMotionManager.startGyroUpdatesToNewQueue { (gyroData, error) in
+        swiftyMotionManager.startGyroUpdatesToMotionQueue { (gyroData, error) in
             DispatchQueue.main.async {
                 self.xLabel.text = gyroData?.rotationRate.x.description
                 self.yLabel.text = gyroData?.rotationRate.y.description
