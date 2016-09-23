@@ -28,7 +28,7 @@ class AccelViewController: UIViewController {
         zLabel.adjustsFontSizeToFitWidth = true
         aveLabel.adjustsFontSizeToFitWidth = true
         
-        swiftyMotionManager.startAccelelometerUpdatesToNewQueue { (accellerometerData, error) in
+        swiftyMotionManager.startAccelelometerUpdatesToMotionQueue { (accellerometerData, error) in
             DispatchQueue.main.async {
                 self.xLabel.text = accellerometerData?.acceleration.x.description
                 self.yLabel.text = accellerometerData?.acceleration.y.description

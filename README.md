@@ -46,15 +46,18 @@ plan
 ```swift
 import SwiftyMotionManager
 
-let motionControl = SwiftyMotionManager.sharedInstance
+let motionManager = SwiftyMotionManager.sharedInstance
 ```
+You can use all methods same as CMMotionManager.
 
 #### Accelerometer
 
+##### Example
 ```swift
 override func viewDidLoad() {
   super.viewDidLoad()
-  motionControl.startAccelelometerUpdatesToMainQueue { (accellerometerData, error) in
+
+  motionManager.startAccelelometerUpdatesToMotionQueue { (accellerometerData, error) in
       self.xLabel.text = accellerometerData?.acceleration.x.description
       self.yLabel.text = accellerometerData?.acceleration.y.description
       self.zLabel.text = accellerometerData?.acceleration.z.description
@@ -63,17 +66,47 @@ override func viewDidLoad() {
 }
 ```
 
+```swift
+/**
+ Accelerometer data will treat by handler whenever it updates by interval.
+ It affect the interval of accelerometer.
+
+ - parameters:
+    - interval: TimeInterval type. Unit is a second.
+    - handler: A block that is invoked with each update to handle new accelerometer data. The block must conform to the CMAccelerometerHandler type.
+ */
+func startAccelelometerUpdatesToMotionQueue(byInterval interval:TimeInterval, withHandler handler: @escaping CMAccelerometerHandler)
+```
+
 #### Gyro
+
+##### Example
 ```swift
 override func viewDidLoad() {
   super.viewDidLoad()
-  motionControl.startGyroUpdatesToMainQueue { (gyroData, error) in
+  motionManager.startGyroUpdatesToMotionQueue { (gyroData, error) in
       self.xLabel.text = gyroData?.rotationRate.x.description
       self.yLabel.text = gyroData?.rotationRate.y.description
       self.zLabel.text = gyroData?.rotationRate.z.description
       self.aveLabel.text = gyroData?.rotationRate.integratedData.description
   }
 }
+```
+
+#### Magnetometer
+Same with Accelerometer.
+
+##### Example
+
+```swift
+  motionManager.startMagnetometerUpdatesToMotionQueue { (magnetometerData, error) in
+      DispatchQueue.main.async {
+          self.xLabel.text = magnetometerData?.magneticField.x.description
+          self.yLabel.text = magnetometerData?.magneticField.y.description
+          self.zLabel.text = magnetometerData?.magneticField.z.description
+          self.aveLabel.text = magnetometerData?.magneticField.integratedData.description
+      }
+  }
 ```
 
 ## Extensions

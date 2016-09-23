@@ -43,7 +43,7 @@ open class SwiftyMotionManager: CMMotionManager {
      - parameters:
         - handler: A block that is invoked with each update to handle new accelerometer data. The block must conform to the CMAccelerometerHandler type.
      */
-    open func startAccelelometerUpdatesToNewQueue(withHandler handler: @escaping CMAccelerometerHandler) {
+    open func startAccelelometerUpdatesToMotionQueue(withHandler handler: @escaping CMAccelerometerHandler) {
         if !self.isAccelerometerAvailable {
             ErrorLog("Accelerometer is not available")
         } else {
@@ -53,12 +53,13 @@ open class SwiftyMotionManager: CMMotionManager {
     
     /** 
      Accelerometer data will treat by handler whenever it updates by interval.
+     It affect the interval of accelerometer.
      
      - parameters:
         - interval: TimeInterval type. Unit is a second.
         - handler: A block that is invoked with each update to handle new accelerometer data. The block must conform to the CMAccelerometerHandler type.
      */
-    open func startAccelelometerUpdatesToNewQueue(byInterval interval:TimeInterval, withHandler handler: @escaping CMAccelerometerHandler) {
+    open func startAccelelometerUpdatesToMotionQueue(byInterval interval:TimeInterval, withHandler handler: @escaping CMAccelerometerHandler) {
         if !self.isAccelerometerAvailable {
             ErrorLog("Accelerometer is not available")
         } else {
@@ -86,7 +87,7 @@ open class SwiftyMotionManager: CMMotionManager {
      - parameters:
         - handler: A block that is invoked with each update to handle new gyro data. The block must conform to the CMGyroHandler type.
      */
-    open func startGyroUpdatesToNewQueue(withHandler handler: @escaping CMGyroHandler) {
+    open func startGyroUpdatesToMotionQueue(withHandler handler: @escaping CMGyroHandler) {
         if !self.isGyroAvailable {
             ErrorLog("Gyro is not available")
         } else {
@@ -95,13 +96,14 @@ open class SwiftyMotionManager: CMMotionManager {
     }
     
     /**
-     Gyro data will treat by handler whenever it updates.
+     Gyro data will treat by handler whenever it updates by interval.
+     It affect the interval of gyro.
      
      - parameters:
         - interval: TimeInterval type. Unit is a second.
         - handler: A block that is invoked with each update to handle new gyro data. The block must conform to the CMGyroHandler type.
      */
-    open func startGyroUpdatesToNewQueue(byInterval interval: TimeInterval, withHandler handler: @escaping CMGyroHandler) {
+    open func startGyroUpdatesToMotionQueue(byInterval interval: TimeInterval, withHandler handler: @escaping CMGyroHandler) {
         if !self.isGyroAvailable {
             ErrorLog("Gyro is not available")
         } else {
@@ -120,7 +122,7 @@ open class SwiftyMotionManager: CMMotionManager {
         }
     }
     
-    open func startMagnetometerUpdatesToNewQueue(withHandler handler: @escaping CMMagnetometerHandler) {
+    open func startMagnetometerUpdatesToMotionQueue(withHandler handler: @escaping CMMagnetometerHandler) {
         if !self.isMagnetometerAvailable {
             ErrorLog("Magnetometer is not available")
         } else {
@@ -128,7 +130,7 @@ open class SwiftyMotionManager: CMMotionManager {
         }
     }
     
-    open func startMagnetometerUpdatesToNewQueue(byInterval interval: TimeInterval, withHandler handler: @escaping CMMagnetometerHandler) {
+    open func startMagnetometerUpdatesToMotionQueue(byInterval interval: TimeInterval, withHandler handler: @escaping CMMagnetometerHandler) {
         if !self.isMagnetometerAvailable {
             ErrorLog("Gyro is not available")
         } else {

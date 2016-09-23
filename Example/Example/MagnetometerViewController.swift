@@ -28,7 +28,7 @@ class MagnetometerViewController: UIViewController {
         zLabel.adjustsFontSizeToFitWidth = true
         aveLabel.adjustsFontSizeToFitWidth = true
         
-        swiftyMotionManager.startMagnetometerUpdatesToNewQueue { (magnetometerData, error) in
+        swiftyMotionManager.startMagnetometerUpdatesToMotionQueue { (magnetometerData, error) in
             DispatchQueue.main.async {
                 self.xLabel.text = magnetometerData?.magneticField.x.description
                 self.yLabel.text = magnetometerData?.magneticField.y.description
