@@ -210,7 +210,7 @@
 				TargetAttributes = {
 					CC6643791D785BCF00212EBA = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = Y6GC6TMAJ2;
+						DevelopmentTeam = KW3484UDPV;
 						LastSwiftMigration = 0800;
 					};
 					CC66438D1D785BCF00212EBA = {
@@ -435,11 +435,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = Y6GC6TMAJ2;
+				DEVELOPMENT_TEAM = KW3484UDPV;
 				INFOPLIST_FILE = Example/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jeffgukang.Example;
+				PRODUCT_BUNDLE_IDENTIFIER = jeffgukang.MotionManagerExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -450,11 +450,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = Y6GC6TMAJ2;
+				DEVELOPMENT_TEAM = KW3484UDPV;
 				INFOPLIST_FILE = Example/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jeffgukang.Example;
+				PRODUCT_BUNDLE_IDENTIFIER = jeffgukang.MotionManagerExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
