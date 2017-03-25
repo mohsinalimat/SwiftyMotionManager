@@ -40,6 +40,7 @@ open class SwiftyMotionManager: CMMotionManager {
 
     /**
      Accelerometer data will treat by handler whenever it updates.
+	
      - parameters:
         - handler: A block that is invoked with each update to handle new accelerometer data. The block must conform to the CMAccelerometerHandler type.
      */
@@ -150,12 +151,13 @@ open class SwiftyMotionManager: CMMotionManager {
 	}
 	
 	/**
-	DeviceMotion data will treat by handler whenever it updates.
-	- parameters:
-	- handler: A block that is invoked with each update to handle new accelerometer data. The block must conform to the CMDeviceMotionHandler type.
-	*/
+	 DeviceMotion data will treat by handler whenever it updates.
+	
+	 - parameters:
+		- handler: A block that is invoked with each update to handle new accelerometer data. The block must conform to the CMDeviceMotionHandler type.
+	 */
     open func startDeviceMotionUpdatesToMotionQueue(withHandler handler: @escaping CMDeviceMotionHandler) {
-        if self.isDeviceMotionAvailable {
+        if !self.isDeviceMotionAvailable {
             ErrorLog("Devicemotion is not available")
         } else {
         super.startDeviceMotionUpdates(to: motionQueue, withHandler: handler)
@@ -163,12 +165,12 @@ open class SwiftyMotionManager: CMMotionManager {
     }
 	
 	/**
-	DeviceMotion data will treat by handler whenever it updates by interval.
-	It affect the interval of DeviceMotion.
+	 DeviceMotion data will treat by handler whenever it updates by interval.
+	 It affect the interval of DeviceMotion.
 	
-	- parameters:
-	- interval: TimeInterval type. Unit is a second.
-	- handler: A block that is invoked with each update to handle new devicemotion data. The block must conform to the CMDeviceMotionHandler type.
+	 - parameters:
+		 - interval: TimeInterval type. Unit is a second.
+		 - handler: A block that is invoked with each update to handle new devicemotion data. The block must conform to the CMDeviceMotionHandler type.
 	*/
 	open func startDeviceMotionUpdatesToMotionQueue(byInterval interval:TimeInterval, withHandler handler: @escaping CMDeviceMotionHandler) {
 		if !self.isAccelerometerAvailable {
