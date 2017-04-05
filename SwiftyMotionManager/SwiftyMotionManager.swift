@@ -41,8 +41,7 @@ open class SwiftyMotionManager: CMMotionManager {
     /**
      Accelerometer data will treat by handler whenever it updates.
 	
-     - parameters:
-        - handler: A block that is invoked with each update to handle new accelerometer data. The block must conform to the CMAccelerometerHandler type.
+     - parameter handler: A block that is invoked with each update to handle new accelerometer data. The block must conform to the CMAccelerometerHandler type.
      */
     open func startAccelelometerUpdatesToMotionQueue(withHandler handler: @escaping CMAccelerometerHandler) {
         if !self.isAccelerometerAvailable {
@@ -53,12 +52,10 @@ open class SwiftyMotionManager: CMMotionManager {
     }
     
     /** 
-     Accelerometer data will treat by handler whenever it updates by interval.
-     It affect the interval of accelerometer.
+	Accelerometer data will treat by handler whenever it updates by interval. It affect the interval of accelerometer.
      
-     - parameters:
-        - interval: TimeInterval type. Unit is a second.
-        - handler: A block that is invoked with each update to handle new accelerometer data. The block must conform to the CMAccelerometerHandler type.
+	 - parameter interval: TimeInterval type. Unit is a second.
+	 - parameter handler: A block that is invoked with each update to handle new accelerometer data. The block must conform to the CMAccelerometerHandler type.
      */
     open func startAccelelometerUpdatesToMotionQueue(byInterval interval:TimeInterval, withHandler handler: @escaping CMAccelerometerHandler) {
         if !self.isAccelerometerAvailable {
@@ -99,10 +96,9 @@ open class SwiftyMotionManager: CMMotionManager {
     /**
      Gyro data will treat by handler whenever it updates by interval.
      It affect the interval of gyro.
-     
-     - parameters:
-        - interval: TimeInterval type. Unit is a second.
-        - handler: A block that is invoked with each update to handle new gyro data. The block must conform to the CMGyroHandler type.
+	
+	 - parameter interval: TimeInterval type. Unit is a second.
+	 - parameter handler: A block that is invoked with each update to handle new gyro data. The block must conform to the CMGyroHandler type.
      */
     open func startGyroUpdatesToMotionQueue(byInterval interval: TimeInterval, withHandler handler: @escaping CMGyroHandler) {
         if !self.isGyroAvailable {
@@ -153,8 +149,7 @@ open class SwiftyMotionManager: CMMotionManager {
 	/**
 	 DeviceMotion data will treat by handler whenever it updates.
 	
-	 - parameters:
-		- handler: A block that is invoked with each update to handle new accelerometer data. The block must conform to the CMDeviceMotionHandler type.
+	 - parameter handler: A block that is invoked with each update to handle new accelerometer data. The block must conform to the CMDeviceMotionHandler type.
 	 */
     open func startDeviceMotionUpdatesToMotionQueue(withHandler handler: @escaping CMDeviceMotionHandler) {
         if !self.isDeviceMotionAvailable {
@@ -168,9 +163,8 @@ open class SwiftyMotionManager: CMMotionManager {
 	 DeviceMotion data will treat by handler whenever it updates by interval.
 	 It affect the interval of DeviceMotion.
 	
-	 - parameters:
-		 - interval: TimeInterval type. Unit is a second.
-		 - handler: A block that is invoked with each update to handle new devicemotion data. The block must conform to the CMDeviceMotionHandler type.
+	 - parameter interval: TimeInterval type. Unit is a second.
+	 - parameter handler: A block that is invoked with each update to handle new devicemotion data. The block must conform to the CMDeviceMotionHandler type.
 	*/
 	open func startDeviceMotionUpdatesToMotionQueue(byInterval interval:TimeInterval, withHandler handler: @escaping CMDeviceMotionHandler) {
 		if !self.isAccelerometerAvailable {
@@ -190,7 +184,7 @@ extension CMAcceleration {
      Only for absolute average value given device regardless of direction.
      It can be used to find how much power is given to device.
      
-     - returns: sqrt(pow(x, 2) + pow(y, 2) + pow(z, 2))
+	 - returns: sqrt(pow(x, 2) + pow(y, 2) + pow(z, 2))
      */
     public var integratedData: Double {
         get {
@@ -204,7 +198,7 @@ extension CMRotationRate {
      Only for absolute average value given device regardless of direction.
      It can be used to find how much device rotated.
      
-     -returns: sqrt(pow(x, 2) + pow(y, 2) + pow(z, 2))
+     - returns: sqrt(pow(x, 2) + pow(y, 2) + pow(z, 2))
      */
     public var integratedData: Double {
         get {
