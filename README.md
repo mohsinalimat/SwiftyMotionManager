@@ -23,13 +23,14 @@ Additionally, There are other features that you may find useful.
 - Accelerometer
 - Gyro
 - Magnetometer
+- Device motion
 
 plan
 - Barometer
 
 ## Requirements
 - iOS 8.0+
-- Xcode 7
+- Xcode 7+
 
 
 ## Integration
@@ -48,11 +49,70 @@ import SwiftyMotionManager
 
 let motionManager = SwiftyMotionManager.sharedInstance
 ```
+
 You can use all methods same as CMMotionManager.
 
 #### Accelerometer
 
+Basically, call the `func startAccelelometerUpdatesToMotionQueue(byInterval interval:TimeInterval, withHandler handler: @escaping CMAccelerometerHandler)` method can treat what you want.
+
+or
+
+> The value of interval property is capped to minimum and maximum values; the maximum value is determined by the maximum frequency supported by the hardware. If your app is sensitive to the intervals of acceleration data.
+
+> Set the [accelerometerUpdateInterval](https://developer.apple.com/documentation/coremotion/cmmotionmanager/1616135-accelerometerupdateinterval) property to specify an update interval. Call the [startAccelerometerUpdates(to:withHandler:)](https://developer.apple.com/documentation/coremotion/cmmotionmanager/1616148-startaccelerometerupdates) method, passing in a block of type [CMAccelerometerHandler](https://developer.apple.com/documentation/coremotion/cmaccelerometerhandler). Accelerometer data is passed into the block as
+[CMAccelerometerData](https://developer.apple.com/documentation/coremotion/cmaccelerometerdata) objects.
+
+func startAccelerometerUpdatesIfAvailable()
+```swift
+  /**
+   You can get the latest accelerometer data through the accelerometerData property. You must call stopAccelerometerUpdates when you no longer want your app to process accelerometer updates.
+   */
+  open func startAccelerometerUpdatesIfAvailable() {
+      if !self.isAccelerometerAvailable {
+          ErrorLog("Accelerometer is not available")
+      } else {
+          super.startAccelerometerUpdates()
+      }
+  }
+```
+
+func startAccelelometerUpdatesToMotionQueue(withHandler handler: @escaping CMAccelerometerHandler)
+```swift
+  /**
+   Accelerometer data will treat by handler whenever it updates.
+
+   - parameter handler: A block that is invoked with each update to handle new accelerometer data. The block must conform to the CMAccelerometerHandler type.
+   */
+  open func startAccelelometerUpdatesToMotionQueue(withHandler handler: @escaping CMAccelerometerHandler) {
+      if !self.isAccelerometerAvailable {
+          ErrorLog("Accelerometer is not available")
+      } else {
+          super.startAccelerometerUpdates(to: motionQueue, withHandler: handler)
+      }
+  }
+```
+
+func startAccelelometerUpdatesToMotionQueue(byInterval interval:TimeInterval, withHandler handler: @escaping CMAccelerometerHandler)
+```swift
+  /**
+	Accelerometer data will treat by handler whenever it updates by interval. It affect the interval of accelerometer.
+
+	 - parameter interval: TimeInterval type. Interval in a second.
+	 - parameter handler: A block that is invoked with each update to handle new accelerometer data. The block must conform to the CMAccelerometerHandler type.
+  */
+  open func startAccelelometerUpdatesToMotionQueue(byInterval interval:TimeInterval, withHandler handler: @escaping CMAccelerometerHandler) {
+      if !self.isAccelerometerAvailable {
+          ErrorLog("Accelerometer is not available")
+      } else {
+          super.accelerometerUpdateInterval = interval
+          super.startAccelerometerUpdates(to: motionQueue, withHandler: handler)
+      }
+  }
+```
+
 ##### Example
+
 ```swift
 override func viewDidLoad() {
   super.viewDidLoad()
