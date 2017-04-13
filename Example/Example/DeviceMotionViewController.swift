@@ -18,7 +18,6 @@ class DeviceMotionViewController: UIViewController {
 	@IBOutlet weak var xLabel: UILabel!
 	@IBOutlet weak var yLabel: UILabel!
 	@IBOutlet weak var zLabel: UILabel!
-	@IBOutlet weak var aveLabel: UILabel!
 	
 	let swiftyMotionManager = SwiftyMotionManager.sharedInstance
 	
@@ -31,9 +30,7 @@ class DeviceMotionViewController: UIViewController {
 		yawLabel.adjustsFontSizeToFitWidth = true
 		xLabel.adjustsFontSizeToFitWidth = true
 		yLabel.adjustsFontSizeToFitWidth = true
-		zLabel.adjustsFontSizeToFitWidth = true
-		aveLabel.adjustsFontSizeToFitWidth = true
-		
+		zLabel.adjustsFontSizeToFitWidth = true	
 		
 		swiftyMotionManager.startDeviceMotionUpdatesToMotionQueue { (devicaMotionData, error) in
 			DispatchQueue.main.async {
