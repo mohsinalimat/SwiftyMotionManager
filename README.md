@@ -56,14 +56,13 @@ You can use all methods same as CMMotionManager.
 
 Basically, call the `func startAccelelometerUpdatesToMotionQueue(byInterval interval:TimeInterval, withHandler handler: @escaping CMAccelerometerHandler)` method can treat what you want.
 
-or
-
 > The value of interval property is capped to minimum and maximum values; the maximum value is determined by the maximum frequency supported by the hardware. If your app is sensitive to the intervals of acceleration data.
 
 > Set the [accelerometerUpdateInterval](https://developer.apple.com/documentation/coremotion/cmmotionmanager/1616135-accelerometerupdateinterval) property to specify an update interval. Call the [startAccelerometerUpdates(to:withHandler:)](https://developer.apple.com/documentation/coremotion/cmmotionmanager/1616148-startaccelerometerupdates) method, passing in a block of type [CMAccelerometerHandler](https://developer.apple.com/documentation/coremotion/cmaccelerometerhandler). Accelerometer data is passed into the block as
 [CMAccelerometerData](https://developer.apple.com/documentation/coremotion/cmaccelerometerdata) objects.
 
-func startAccelerometerUpdatesIfAvailable()
+##### func startAccelerometerUpdatesIfAvailable()
+
 ```swift
   /**
    You can get the latest accelerometer data through the accelerometerData property. You must call stopAccelerometerUpdates when you no longer want your app to process accelerometer updates.
@@ -77,7 +76,8 @@ func startAccelerometerUpdatesIfAvailable()
   }
 ```
 
-func startAccelelometerUpdatesToMotionQueue(withHandler handler: @escaping CMAccelerometerHandler)
+##### func startAccelelometerUpdatesToMotionQueue(withHandler handler: @escaping CMAccelerometerHandler)
+
 ```swift
   /**
    Accelerometer data will treat by handler whenever it updates.
@@ -93,12 +93,13 @@ func startAccelelometerUpdatesToMotionQueue(withHandler handler: @escaping CMAcc
   }
 ```
 
-func startAccelelometerUpdatesToMotionQueue(byInterval interval:TimeInterval, withHandler handler: @escaping CMAccelerometerHandler)
+##### func startAccelelometerUpdatesToMotionQueue(byInterval interval:TimeInterval, withHandler handler: @escaping CMAccelerometerHandler)
+
 ```swift
   /**
 	Accelerometer data will treat by handler whenever it updates by interval. It affect the interval of accelerometer.
 
-	 - parameter interval: TimeInterval type. Interval in a second.
+	 - parameter interval: TimeInterval type. The interval units are in seconds.
 	 - parameter handler: A block that is invoked with each update to handle new accelerometer data. The block must conform to the CMAccelerometerHandler type.
   */
   open func startAccelelometerUpdatesToMotionQueue(byInterval interval:TimeInterval, withHandler handler: @escaping CMAccelerometerHandler) {
@@ -139,6 +140,59 @@ func startAccelelometerUpdatesToMotionQueue(byInterval interval:TimeInterval, wi
 ```
 
 #### Gyro
+
+##### func startGyroUpdatesIfAvailable()
+
+```swift
+/**
+ You can get the latest gyro data through the gyroData property. You must call stopGyroUpdates when you no longer want your app to process gyro updates.
+ */
+open func startGyroUpdatesIfAvailable() {
+    if !self.isGyroAvailable {
+        ErrorLog("Gyro is not available")
+    } else {
+        super.startGyroUpdates()
+    }
+}
+```
+
+##### func startGyroUpdatesToMotionQueue(withHandler handler: @escaping CMGyroHandler)
+
+```swift
+/**
+ Gyro data will treat by handler whenever it updates.
+
+ - parameters:
+    - handler: A block that is invoked with each update to handle new gyro data. The block must conform to the CMGyroHandler type.
+ */
+open func startGyroUpdatesToMotionQueue(withHandler handler: @escaping CMGyroHandler) {
+    if !self.isGyroAvailable {
+        ErrorLog("Gyro is not available")
+    } else {
+        super.startGyroUpdates(to: motionQueue, withHandler: handler)
+    }
+}
+```
+
+##### func startGyroUpdatesToMotionQueue(byInterval interval: TimeInterval, withHandler handler: @escaping CMGyroHandler)
+
+```swift
+/**
+ Gyro data will treat by handler whenever it updates by interval.
+ It affect the interval of gyro.
+
+- parameter interval: TimeInterval type. The interval units are in seconds.
+- parameter handler: A block that is invoked with each update to handle new gyro data. The block must conform to the CMGyroHandler type.
+ */
+open func startGyroUpdatesToMotionQueue(byInterval interval: TimeInterval, withHandler handler: @escaping CMGyroHandler) {
+    if !self.isGyroAvailable {
+        ErrorLog("Gyro is not available")
+    } else {
+        super.gyroUpdateInterval = interval
+        super.startGyroUpdates(to: motionQueue, withHandler: handler)
+    }
+}
+```
 
 ##### Example
 ```swift
