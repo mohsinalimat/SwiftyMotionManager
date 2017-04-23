@@ -54,7 +54,7 @@ open class SwiftyMotionManager: CMMotionManager {
     /** 
 	Accelerometer data will treat by handler whenever it updates by interval. It affect the interval of accelerometer.
      
-	 - parameter interval: TimeInterval type. Unit is a second.
+	 - parameter interval: TimeInterval type. The interval units are in seconds.
 	 - parameter handler: A block that is invoked with each update to handle new accelerometer data. The block must conform to the CMAccelerometerHandler type.
      */
     open func startAccelelometerUpdatesToMotionQueue(byInterval interval:TimeInterval, withHandler handler: @escaping CMAccelerometerHandler) {
@@ -70,14 +70,14 @@ open class SwiftyMotionManager: CMMotionManager {
     
     /**
      You can get the latest gyro data through the gyroData property. You must call stopGyroUpdates when you no longer want your app to process gyro updates.
-    */
+     */
     open func startGyroUpdatesIfAvailable() {
         if !self.isGyroAvailable {
             ErrorLog("Gyro is not available")
         } else {
             super.startGyroUpdates()
         }
-    }    
+    }
     
     /**
      Gyro data will treat by handler whenever it updates.
@@ -97,7 +97,7 @@ open class SwiftyMotionManager: CMMotionManager {
      Gyro data will treat by handler whenever it updates by interval.
      It affect the interval of gyro.
 	
-	 - parameter interval: TimeInterval type. Unit is a second.
+	 - parameter interval: TimeInterval type. The interval units are in seconds.
 	 - parameter handler: A block that is invoked with each update to handle new gyro data. The block must conform to the CMGyroHandler type.
      */
     open func startGyroUpdatesToMotionQueue(byInterval interval: TimeInterval, withHandler handler: @escaping CMGyroHandler) {
@@ -163,7 +163,7 @@ open class SwiftyMotionManager: CMMotionManager {
 	 DeviceMotion data will treat by handler whenever it updates by interval.
 	 It affect the interval of DeviceMotion.
 	
-	 - parameter interval: TimeInterval type. Unit is a second.
+	 - parameter interval: TimeInterval type. The interval units are in seconds.
 	 - parameter handler: A block that is invoked with each update to handle new devicemotion data. The block must conform to the CMDeviceMotionHandler type.
 	*/
 	open func startDeviceMotionUpdatesToMotionQueue(byInterval interval:TimeInterval, withHandler handler: @escaping CMDeviceMotionHandler) {
