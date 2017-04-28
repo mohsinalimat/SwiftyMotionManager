@@ -54,6 +54,21 @@ You can use all methods same as CMMotionManager.
 
 #### Accelerometer
 
+##### Example
+
+```swift
+override func viewDidLoad() {
+  super.viewDidLoad()
+
+  motionManager.startAccelelometerUpdatesToMotionQueue { (accellerometerData, error) in
+      self.xLabel.text = accellerometerData?.acceleration.x.description
+      self.yLabel.text = accellerometerData?.acceleration.y.description
+      self.zLabel.text = accellerometerData?.acceleration.z.description
+      self.aveLabel.text = accellerometerData?.acceleration.integratedData.description
+  }
+}
+```
+
 Basically, call the `func startAccelelometerUpdatesToMotionQueue(byInterval interval:TimeInterval, withHandler handler: @escaping CMAccelerometerHandler)` method can treat what you want.
 
 > The value of interval property is capped to minimum and maximum values; the maximum value is determined by the maximum frequency supported by the hardware. If your app is sensitive to the intervals of acceleration data.
@@ -112,34 +127,20 @@ Basically, call the `func startAccelelometerUpdatesToMotionQueue(byInterval inte
   }
 ```
 
-##### Example
+#### Gyro
 
+##### Example
 ```swift
 override func viewDidLoad() {
   super.viewDidLoad()
-
-  motionManager.startAccelelometerUpdatesToMotionQueue { (accellerometerData, error) in
-      self.xLabel.text = accellerometerData?.acceleration.x.description
-      self.yLabel.text = accellerometerData?.acceleration.y.description
-      self.zLabel.text = accellerometerData?.acceleration.z.description
-      self.aveLabel.text = accellerometerData?.acceleration.integratedData.description
+  motionManager.startGyroUpdatesToMotionQueue { (gyroData, error) in
+      self.xLabel.text = gyroData?.rotationRate.x.description
+      self.yLabel.text = gyroData?.rotationRate.y.description
+      self.zLabel.text = gyroData?.rotationRate.z.description
+      self.aveLabel.text = gyroData?.rotationRate.integratedData.description
   }
 }
 ```
-
-```swift
-/**
- Accelerometer data will treat by handler whenever it updates by interval.
- It affect the interval of accelerometer.
-
- - parameters:
-    - interval: TimeInterval type. Unit is a second.
-    - handler: A block that is invoked with each update to handle new accelerometer data. The block must conform to the CMAccelerometerHandler type.
- */
-func startAccelelometerUpdatesToMotionQueue(byInterval interval:TimeInterval, withHandler handler: @escaping CMAccelerometerHandler)
-```
-
-#### Gyro
 
 ##### func startGyroUpdatesIfAvailable()
 
@@ -191,19 +192,6 @@ open func startGyroUpdatesToMotionQueue(byInterval interval: TimeInterval, withH
         super.gyroUpdateInterval = interval
         super.startGyroUpdates(to: motionQueue, withHandler: handler)
     }
-}
-```
-
-##### Example
-```swift
-override func viewDidLoad() {
-  super.viewDidLoad()
-  motionManager.startGyroUpdatesToMotionQueue { (gyroData, error) in
-      self.xLabel.text = gyroData?.rotationRate.x.description
-      self.yLabel.text = gyroData?.rotationRate.y.description
-      self.zLabel.text = gyroData?.rotationRate.z.description
-      self.aveLabel.text = gyroData?.rotationRate.integratedData.description
-  }
 }
 ```
 
