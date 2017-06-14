@@ -44,10 +44,6 @@ class DeviceMotionViewController: UIViewController {
 				self.xLabel.text = devicaMotionData?.rotationRate.x.description
 				self.yLabel.text = devicaMotionData?.rotationRate.y.description
 				self.zLabel.text = devicaMotionData?.rotationRate.z.description
-				
-//				self.yLabel.text = devicaMotionData?.magneticField.y.description
-//				self.zLabel.text = devicaMotionData?.magneticField.z.description
-				//				self.aveLabel.text = devicaMoti`onData?.magneticField.integratedData.description
 			}
 		}
 	}
