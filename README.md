@@ -109,6 +109,33 @@ Same with Accelerometer.
   }
 ```
 
+#### DeviceMotion
+DeviceMotion gives measurements of the attitude, rotation rate, and acceleration of a device.
+
+Normaly, DeviceMotion datas reflect values applied algorithm considering surrounding fields as earth's magnetic, gravity and device bias.
+
+Thus, User DeviceMotion if you want to use *MotionManager* datas to apply your game or applications.
+
+
+##### Example
+
+```swift
+	let swiftyMotionManager = SwiftyMotionManager.sharedInstance
+
+  // in ViewDidLoad
+  swiftyMotionManager.startDeviceMotionUpdatesToMotionQueue { (devicaMotionData, error) in
+			DispatchQueue.main.async {
+				self.pitchLabel.text = devicaMotionData?.attitude.pitch.description
+				self.rollLabel.text = devicaMotionData?.attitude.roll.description
+				self.yawLabel.text = devicaMotionData?.attitude.yaw.description
+
+				self.xLabel.text = devicaMotionData?.rotationRate.x.description
+				self.yLabel.text = devicaMotionData?.rotationRate.y.description
+				self.zLabel.text = devicaMotionData?.rotationRate.z.description
+			}
+		}
+```
+
 ## Extensions
 
 #### integratedData
